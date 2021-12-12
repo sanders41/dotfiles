@@ -24,9 +24,9 @@ sh symlink.sh
 npm i -g @tailwindcss/language-server@0.0.5 diagnostic-languageserver@1.14.1 pyright@1.1.195 typescript-language-server@0.8.1 typescript@4.5.3 vls@0.7.6
 ```
 
-### rust-analyzer:
+### rust-analyzer
 
-Manjaro/Arch:
+Manjaro/Arch
 
 ```sh
 sudo pacman -S rust-analyzer
