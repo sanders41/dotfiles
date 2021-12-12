@@ -22,7 +22,7 @@ sh symlink.sh
 ### NPM packages:
 
 ```sh
-npm i -g @tailwindcss/language-server diagnostic-languageserver pyright typescript-language-server typescript vls
+npm i -g @tailwindcss/language-server pyright typescript-language-server typescript vls
 ```
 
 ### rust-analyzer
