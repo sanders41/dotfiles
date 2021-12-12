@@ -48,6 +48,12 @@ chmod +x ~/.local/bin/rust-analyzer
 
 For Ubuntu make sure ~/.local/bin is on the path
 
+### Install packer
+
+```sh
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
 ### Install plugins for neovim
 
 Open neovim
