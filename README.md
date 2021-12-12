@@ -5,8 +5,7 @@
 Clone the repository to your home directory
 
 ```sh
-cd ~
-git clone git@github.com:sanders41/dotfiles.git
+git clone --depth 1 git@github.com:sanders41/dotfiles.git ~/dotfiles
 ```
 
 Change to the dotfiles directory and run the provided shell script to symlink the files/directories.
