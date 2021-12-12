@@ -9,7 +9,8 @@ cd ~
 git clone git@github.com:sanders41/dotfiles.git
 ```
 
-Change to the dotfiles directory and run the provided shell script to symlink the files/directories
+Change to the dotfiles directory and run the provided shell script to symlink the files/directories.
+If you already have dot files present they will be backed up before creating the symlinks.
 
 ```sh
 cd dotfiles
