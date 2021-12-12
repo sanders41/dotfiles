@@ -35,7 +35,6 @@ require('plugins')
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.tailwindcss.setup{}
-require'lspconfig'.sumneko_lua.setup{}
 require('rust-tools').setup({})
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.vuels.setup{}
