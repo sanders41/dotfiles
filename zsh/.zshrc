@@ -115,7 +115,7 @@ alias gs="git status"
 alias gpom="git pull origin main --ff-only"
 alias gpum="git pull upstream main --ff-only"
 alias pl10ku="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
-alias pyenvu="git -C $HOME/.pyenv pull"
+alias pyenvu="git -C $HOME/.pyenv pull"  # Only works if pyenv installed from github
 alias dotfilesu="git -C $HOME/dotfiles pull origin main --ff-only"
 alias we="weather-command zip 27455 -i --am-pm"
 alias wed="weather-command zip 27455 -i --am-pm -f daily"
@@ -134,4 +134,4 @@ eval "$(pyenv init --path)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="$HOME/.npm-global/bin:$PATH"
-export COOKIECUTTER_CONFIG="$HOME/.cookiecutters/defaults-paul.yaml"
+export COOKIECUTTER_CONFIG="$HOME/.cookiecutters/defaults.yaml"

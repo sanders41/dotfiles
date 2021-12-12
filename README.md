@@ -60,3 +60,60 @@ Then install plugins with Packer
 ```sh
 :PackerInstall
 ```
+
+## ZSH
+
+- Install powerlevel10k
+
+  ```sh
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  ```
+
+- Install pyenv
+
+  macOS
+
+  ```sh
+  brew install pyenv
+  ```
+
+  Linux
+
+  ```sh
+   git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+  ```
+
+- Install pipx with instructions [here](https://github.com/pypa/pipx)
+- Install poetry
+
+  ```sh
+  curl -sSL https://install.python-poetry.org/install-poetry.py | python3 -
+  ```
+
+## Weather
+
+Install weather-command.
+
+```sh
+pipx install weather-command
+```
+
+Then update the zip in the `we`, `weh`, `wed` commands to match the desired zip, or change
+to using the city name. Example:
+
+```sh
+alias we="weather-command city seattle -i --am-pm"
+```
+
+To get metric units and 24 hour time remove the `-i` and `--am-pm`.
+
+## Cookiecutter
+
+Install cookiecutter
+
+```sh
+pipx install cookiecutter
+```
+
+Then create the file `~/.cookiecutters/defaults.yaml` file with your desired defaults. An example
+can be found [here](https://cookiecutter.readthedocs.io/en/1.7.0/advanced/user_config.html)
