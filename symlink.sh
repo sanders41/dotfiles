@@ -15,7 +15,7 @@ if [ -d "$NVIM_DIR" ]; then
   mv "$NVIM_DIR" "$NVIM_DIR_backup"
 fi
 
-ln -s "$HOME/dotfiles/nvim" "$NVIM_DIR"
+ln -s "$HOME/dotfiles/nvim" "$$HOME/.config"
 
 # Make a backup of .p10k.zsh if it exists then symlink it to dotfiles
 P10K="$HOME/.p10k.zsh"
