@@ -33,7 +33,15 @@ local nvim_lsp = require('lspconfig')
 
 require('plugins')
 require'lspconfig'.rust_analyzer.setup{}
-require'lspconfig'.pyright.setup{}
+require'lspconfig'.pyright.setup{
+  settings = {
+    python = {
+      analysis = {
+        autoImportCompletions = false,
+      }
+    }
+  }
+}
 require'lspconfig'.tailwindcss.setup{}
 require('rust-tools').setup({})
 require'lspconfig'.tsserver.setup{}
