@@ -5,6 +5,7 @@ cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+  use 'nvim-lua/plenary.nvim' -- Used by a lot of plugins
   use 'neovim/nvim-lspconfig'
   use 'Mofiqul/vscode.nvim'
   use {
@@ -19,14 +20,14 @@ return require('packer').startup(function()
   use 'airblade/vim-gitgutter'
   use 'hoob3rt/lualine.nvim'
   use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
+  use "hrsh7th/cmp-cmdline"
+  use "hrsh7th/cmp-nvim-lsp"
   use 'tpope/vim-fugitive'
   use 'mhartington/formatter.nvim'
   use 'cespare/vim-toml'
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
+  use 'nvim-telescope/telescope.nvim'
   use 'simrat39/rust-tools.nvim'
   use 'rust-lang/rust.vim'
 end)
