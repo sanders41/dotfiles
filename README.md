@@ -96,6 +96,22 @@ Then install plugins with Packer
   curl -sSL https://install.python-poetry.org/install-poetry.py | python3 -
   ```
 
+## Telescop
+
+For Telescope `live_view` to work ripgrep needs to be installed.
+
+- Mac
+
+  ```sh
+  brew install ripgrep
+  ```
+
+- Manjaro/Arch
+
+  ```sh
+  sudo pacman -S ripgrep
+  ```
+
 ## Weather
 
 Install weather-command.
