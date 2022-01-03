@@ -2,6 +2,7 @@ local cmd = vim.cmd
 local set = vim.opt
 local g = vim.g
 local keymap = vim.api.nvim_set_keymap
+local opts = { noremap=true, silent=true }
 
 g.mapleader = " "
 
@@ -30,9 +31,6 @@ require'nvim-tree'.setup {}
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
--- Mappings.
-local opts = { noremap=true, silent=true }
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
