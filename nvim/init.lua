@@ -2,10 +2,12 @@ local cmd = vim.cmd
 local set = vim.opt
 local g = vim.g
 local keymap = vim.api.nvim_set_keymap
+local opts = { noremap=true, silent=true }
 
 g.mapleader = " "
 
 require "options"
+require "keymaps"
 
 local nvim_lsp = require('lspconfig')
 
@@ -29,9 +31,6 @@ require'nvim-tree'.setup {}
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
--- Mappings.
-local opts = { noremap=true, silent=true }
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -62,10 +61,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
 end
-
--- Telescope key maps
-keymap("n", "ff", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "fg", "<cmd>Telescope live_grep<cr>", opts)
 
 local servers = { 'pyright', 'rust_analyzer' }
 for _, lsp in ipairs(servers) do
@@ -143,11 +138,3 @@ require('formatter').setup(  -- run black on save for Python files
     }
   }
 )
-
-local function map(mode, lhs, rhs, opts)
-  local options = {noremap = true}
-  if opts then options = vim.tbl_extend('force', options, opts) end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
-map('n', '\\', ':NvimTreeToggle<CR>', {silent=true})
