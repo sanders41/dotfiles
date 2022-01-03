@@ -5,30 +5,7 @@ local keymap = vim.api.nvim_set_keymap
 
 g.mapleader = " "
 
-set.encoding = 'utf-8'
-set.scrolloff = 2
-set.tabstop = 2 set.shiftwidth = 2
-set.softtabstop = 2
-set.expandtab = true
-set.smartindent = true
-set.wrap = false
-set.mouse = 'a'
-set.number = true
-set.splitright = true
-set.splitbelow = true
-set.showmatch = true
-set.colorcolumn = '100'
-set.clipboard = 'unnamedplus'
-set.termguicolors = true
-cmd [[autocmd FileType py,rs setlocal shiftwidth=4 tabstop=4 softtabstop=4]]
-
--- search settings
-set.ignorecase = true
-set.smartcase = true
-
--- show hidden characters
-set.list = true
-set.listchars:append({extends = '»', precedes = '«', trail = '•'})
+require "options"
 
 local nvim_lsp = require('lspconfig')
 
@@ -100,9 +77,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
-
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
@@ -138,9 +112,7 @@ cmp.setup {
 }
 
 vim.g.vscode_style = 'dark'
-cmd[[colorscheme vscode]]
 
-cmd [[autocmd TermOpen * setlocal nonumber norelativenumber]]
 set.shell = 'zsh --login'
 
 require('lualine').setup({
@@ -157,10 +129,6 @@ require('lualine').setup({
   },
 })
 
-cmd [[let g:rustfmt_autosave = 1]]  -- run cargo fmt on save for Rust files
-cmd [[let g:rustfmt_emit_files = 1]]
-cmd [[let g:rustfmt_fail_silently = 0]]
-
 require('formatter').setup(  -- run black on save for Python files
   {
     filetype = {
@@ -174,16 +142,6 @@ require('formatter').setup(  -- run black on save for Python files
       }
     }
   }
-)
-
-cmd(
-  [[
-    augroup FormatAutogroup
-      autocmd!
-      autocmd BufWritePost *.py FormatWrite
-    augroup END
-  ]],
-  true
 )
 
 local function map(mode, lhs, rhs, opts)
