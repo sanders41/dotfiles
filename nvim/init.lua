@@ -1,6 +1,7 @@
 local cmd = vim.cmd
 local set = vim.opt
 local g = vim.g
+local keymap = vim.api.nvim_set_keymap
 
 g.mapleader = " "
 
@@ -52,6 +53,9 @@ require'nvim-tree'.setup {}
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+-- Mappings.
+local opts = { noremap=true, silent=true }
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -60,9 +64,6 @@ local on_attach = function(client, bufnr)
 
   -- Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Mappings.
-  local opts = { noremap=true, silent=true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -84,6 +85,10 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
 end
+
+-- Telescope key maps
+keymap("n", "ff", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "fg", "<cmd>Telescope live_grep<cr>", opts)
 
 local servers = { 'pyright', 'rust_analyzer' }
 for _, lsp in ipairs(servers) do
