@@ -47,6 +47,22 @@ chmod +x ~/.local/bin/rust-analyzer
 
 For Ubuntu make sure ~/.local/bin is on the path
 
+### Telescope
+
+For Telescope `live_view` to work ripgrep needs to be installed.
+
+- Mac
+
+  ```sh
+  brew install ripgrep
+  ```
+
+- Manjaro/Arch
+
+  ```sh
+  sudo pacman -S ripgrep
+  ```
+
 ### Install packer
 
 ```sh
@@ -94,22 +110,6 @@ Then install plugins with Packer
 
   ```sh
   curl -sSL https://install.python-poetry.org/install-poetry.py | python3 -
-  ```
-
-## Telescop
-
-For Telescope `live_view` to work ripgrep needs to be installed.
-
-- Mac
-
-  ```sh
-  brew install ripgrep
-  ```
-
-- Manjaro/Arch
-
-  ```sh
-  sudo pacman -S ripgrep
   ```
 
 ## Weather
