@@ -20,10 +20,11 @@ return require('packer').startup(function()
   use 'airblade/vim-gitgutter'
   use 'hoob3rt/lualine.nvim'
   use 'hrsh7th/nvim-cmp'
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-cmdline"
-  use "hrsh7th/cmp-nvim-lsp"
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
   use 'tpope/vim-fugitive'
   use 'mhartington/formatter.nvim'
   use 'cespare/vim-toml'
