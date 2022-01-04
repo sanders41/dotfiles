@@ -30,6 +30,7 @@ require'lspconfig'.vuels.setup{}
 require'nvim-tree'.setup {}
 
 local config = {
+  virtual_text = false,
   update_in_insert = true,
   underline = true,
   severity_sort = true,
