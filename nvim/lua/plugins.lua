@@ -19,6 +19,9 @@ return require('packer').startup(function()
   }
   use 'airblade/vim-gitgutter'
   use 'hoob3rt/lualine.nvim'
+  use "akinsho/bufferline.nvim"
+  use "kyazdani42/nvim-web-devicons"
+  use "moll/vim-bbye"
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
