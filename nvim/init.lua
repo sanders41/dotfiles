@@ -8,11 +8,11 @@ g.mapleader = ' '
 
 require 'options'
 require 'keymaps'
+require('plugins')
 require 'treesitter'
 
 local nvim_lsp = require('lspconfig')
 
-require('plugins')
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.pyright.setup{
   settings = {
