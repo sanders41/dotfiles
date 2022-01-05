@@ -70,6 +70,7 @@ packer.startup(function()
   use 'nvim-telescope/telescope.nvim'
   use 'simrat39/rust-tools.nvim'
   use 'rust-lang/rust.vim'
+  use "akinsho/toggleterm.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
