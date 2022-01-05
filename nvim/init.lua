@@ -8,8 +8,9 @@ g.mapleader = ' '
 
 require 'options'
 require 'keymaps'
-require('plugins')
-require 'treesitter'
+require 'plugins'
+require 'treesitter_setup'
+require 'toggleterm_setup'
 
 local nvim_lsp = require('lspconfig')
 
