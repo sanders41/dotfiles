@@ -14,6 +14,7 @@ require 'toggleterm_setup'
 require 'bufferline_setup'
 require 'lualine_setup'
 require 'nvim_cmp_setup'
+require 'nvim_tree_setup'
 
 local nvim_lsp = require('lspconfig')
 
@@ -31,7 +32,6 @@ require'lspconfig'.tailwindcss.setup{}
 require('rust-tools').setup({})
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.vuels.setup{}
-require'nvim-tree'.setup {}
 
 local config = {
   virtual_text = false,

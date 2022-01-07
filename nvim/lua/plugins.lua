@@ -48,11 +48,7 @@ packer.startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require'nvim-tree'.setup {} end
-  }
+  use 'kyazdani42/nvim-tree.lua'
   use 'airblade/vim-gitgutter'
   use 'hoob3rt/lualine.nvim'
   use 'akinsho/bufferline.nvim'
