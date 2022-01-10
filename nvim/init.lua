@@ -15,6 +15,7 @@ require 'bufferline_setup'
 require 'lualine_setup'
 require 'nvim_cmp_setup'
 require 'nvim_tree_setup'
+require 'gitsigns_setup'
 
 local nvim_lsp = require('lspconfig')
 

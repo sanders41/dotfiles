@@ -49,7 +49,7 @@ packer.startup(function()
     run = ':TSUpdate'
   }
   use 'kyazdani42/nvim-tree.lua'
-  use 'airblade/vim-gitgutter'
+  use 'lewis6991/gitsigns.nvim'
   use 'hoob3rt/lualine.nvim'
   use 'akinsho/bufferline.nvim'
   use 'kyazdani42/nvim-web-devicons'
