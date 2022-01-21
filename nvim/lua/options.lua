@@ -1,6 +1,5 @@
 local cmd = vim.cmd
 local set = vim.opt
-local keymap = vim.api.nvim_set_keymap
 
 set.encoding = 'utf-8'
 set.scrolloff = 2
