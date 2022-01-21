@@ -5,16 +5,16 @@ local opts = { noremap=true, silent=true }
 
 g.mapleader = ' '
 
-require 'options'
-require 'keymaps'
-require 'plugins'
-require 'treesitter_setup'
-require 'toggleterm_setup'
-require 'bufferline_setup'
-require 'lualine_setup'
-require 'nvim_cmp_setup'
-require 'nvim_tree_setup'
-require 'gitsigns_setup'
+require 'user.options'
+require 'user.keymaps'
+require 'user.plugins'
+require 'user.treesitter'
+require 'user.toggleterm'
+require 'user.bufferline'
+require 'user.lualine'
+require 'user.nvim_cmp'
+require 'user.nvim_tree'
+require 'user.gitsigns'
 
 local nvim_lsp = require('lspconfig')
 
