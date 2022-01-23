@@ -22,7 +22,7 @@ sh symlink.sh
 
 [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer) is included in order to
 manager lsp servers. `:LspInstallInfo` will open a list of both available and installed servers. To
-install a new server select it in the "Available servers" list and press the a key. To update
+install a new server select it in the "Available servers" list and press the i key. To update
 the installed servers open the info panel `:LspInstallInfo` and press U.
 
 ### Telescope
