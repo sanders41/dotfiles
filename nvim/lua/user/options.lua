@@ -37,19 +37,3 @@ vim.g.vscode_style = 'dark'
 cmd[[colorscheme vscode]]
 
 cmd [[autocmd TermOpen * setlocal nonumber norelativenumber]]
-
--- Rust
-cmd [[let g:rustfmt_autosave = 1]]  -- run cargo fmt on save for Rust files
-cmd [[let g:rustfmt_emit_files = 1]]
-cmd [[let g:rustfmt_fail_silently = 0]]
-
--- Python
-cmd(
-  [[
-    augroup FormatAutogroup
-      autocmd!
-      autocmd BufWritePost *.py FormatWrite
-    augroup END
-  ]],
-  true
-)

@@ -18,34 +18,12 @@ sh symlink.sh
 
 ## For the neovim setup the following needs to be installed
 
-### NPM packages:
+### nvim-lsp-installer
 
-```sh
-npm i -g @tailwindcss/language-server pyright typescript-language-server typescript vls
-```
-
-### rust-analyzer
-
-Manjaro/Arch
-
-```sh
-sudo pacman -S rust-analyzer
-```
-
-macOS
-
-```sh
-brew install rust-analyzer
-```
-
-Ubuntu
-
-```sh
-curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
-chmod +x ~/.local/bin/rust-analyzer
-```
-
-For Ubuntu make sure ~/.local/bin is on the path
+[nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer) is included in order to
+manager lsp servers. `:LspInstallInfo` will open a list of both available and installed servers. To
+install a new server select it in the "Available servers" list and press the a key. To update
+the installed servers open the info panel `:LspInstallInfo` and press U.
 
 ### Telescope
 
