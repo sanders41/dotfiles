@@ -37,3 +37,5 @@ vim.g.vscode_style = 'dark'
 cmd[[colorscheme vscode]]
 
 cmd [[autocmd TermOpen * setlocal nonumber norelativenumber]]
+
+set.shell = 'zsh --login'
