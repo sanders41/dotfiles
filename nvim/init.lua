@@ -1,5 +1,3 @@
-local set = vim.opt
-
 require 'user.options'
 require 'user.keymaps'
 require 'user.plugins'
