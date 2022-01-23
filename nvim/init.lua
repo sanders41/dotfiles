@@ -11,7 +11,3 @@ require 'user.nvim_cmp'
 require 'user.nvim_tree'
 require 'user.gitsigns'
 require 'user.lsp'
-
-vim.g.vscode_style = 'dark'
-
-set.shell = 'zsh --login'
