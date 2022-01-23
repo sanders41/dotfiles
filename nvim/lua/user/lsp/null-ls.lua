@@ -23,6 +23,7 @@ null_ls.setup {
       },
     },
     diagnostics.mypy,
+    diagnostics.markdownlint,
   },
 
   on_attach = function(client)
