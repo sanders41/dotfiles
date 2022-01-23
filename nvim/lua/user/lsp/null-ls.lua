@@ -16,6 +16,7 @@ null_ls.setup {
     formatting.black.with { extra_args = { "--line-length=100" } },
     formatting.isort.with { extra_args = { "--profile=black", "--line-length=100" } },
     formatting.rustfmt,
+    formatting.markdownlint,
     diagnostics.flake8.with {
       extra_args = {
         "--ignore=E203,E231,E501,D100,D101,D102,D103,D104,D105,D106,D107,D401",
@@ -23,7 +24,6 @@ null_ls.setup {
       },
     },
     diagnostics.mypy,
-    diagnostics.markdownlint,
   },
 
   on_attach = function(client)
