@@ -107,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias vim="nvim"
 alias pm="sudo pacman -Syyu"  # For Manjaro
 alias bu="brew update && brew upgrade"  # For homebrew
 alias venv="virtualenv -p $HOME/.pyenv/shims/python .venv && . .venv/bin/activate && pip install -U pip"
