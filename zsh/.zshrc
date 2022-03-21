@@ -138,3 +138,4 @@ eval "$(pyenv init --path)"
 
 export PATH="$HOME/.npm-global/bin:$PATH"
 export COOKIECUTTER_CONFIG="$HOME/.cookiecutters/defaults.yaml"
+export PATH="$PATH:/home/paul/.local/bin"
