@@ -108,8 +108,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias vim="nvim"
-alias pm="sudo pacman -Syyu"  # For Manjaro
-alias bu="brew update && brew upgrade"  # For homebrew
 alias venv="virtualenv -p $HOME/.pyenv/shims/python .venv && . .venv/bin/activate && pip install -U pip"
 alias activate=". .venv/bin/activate"
 alias gm="git checkout main"
@@ -139,3 +137,25 @@ eval "$(pyenv init --path)"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export COOKIECUTTER_CONFIG="$HOME/.cookiecutters/defaults.yaml"
 export PATH="$PATH:/home/paul/.local/bin"
+
+# OS Specific settings
+
+if [[ `uname` == "Linux" ]]; then
+  export EDITOR="/usr/bin/nvim"
+  export VISUAL="/usr/bin/nvim"
+fi
+
+# Arch/Manjaro
+if command -v pacman > /dev/null; then
+  alias pm="sudo pacman -Syyu"
+fi
+
+if [[ `uname` == "Darwin" ]]; then
+  export EDITOR="/usr/local/bin/nvim"
+  export VISUAL="/usr/local/bin/nvim"
+fi
+
+# homebrew
+if command -v brew > /dev/null; then
+  alias bu="brew update && brew upgrade"
+fi
