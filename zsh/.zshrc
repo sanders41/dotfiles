@@ -138,6 +138,11 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 export COOKIECUTTER_CONFIG="$HOME/.cookiecutters/defaults.yaml"
 export PATH="$PATH:/home/paul/.local/bin"
 
+# Kitty ssh
+if [[ "${TERM}" == "xterm-kitty" ]]; then
+  alias ssh="kitty +kitten ssh"
+fi
+
 # OS Specific settings
 
 if [[ `uname` == "Linux" ]]; then
