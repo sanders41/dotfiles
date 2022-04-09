@@ -71,14 +71,6 @@ Then install plugins with Packer
 
 - Install pyenv
 
-  macOS
-
-  ```sh
-  brew install pyenv
-  ```
-
-  Linux
-
   ```sh
    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
   ```
@@ -95,7 +87,7 @@ Then install plugins with Packer
 Install weather-command.
 
 ```sh
-pipx install weather-command
+pipx install weather-command[uvloop]
 ```
 
 Then update the zip in the `we`, `weh`, `wed` commands to match the desired zip, or change
