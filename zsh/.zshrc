@@ -112,6 +112,7 @@ alias venv="virtualenv -p $HOME/.pyenv/shims/python .venv && . .venv/bin/activat
 alias activate=". .venv/bin/activate"
 alias gm="git checkout main"
 alias gs="git status"
+alias gbd="git checkout -b"
 alias gpom="git pull origin main --ff-only"
 alias gpum="git pull upstream main --ff-only"
 alias pl10ku="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
