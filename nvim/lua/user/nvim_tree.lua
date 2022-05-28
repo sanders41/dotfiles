@@ -1,23 +1,3 @@
-vim.g.nvim_tree_icons = {
-  default = '',
-  symlink = '',
-  git = {
-    unstaged = '',
-    staged = 'S',
-    unmerged = '',
-    renamed = '➜',
-    deleted = '',
-    untracked = 'U',
-    ignored = '◌',
-  },
-  folder = {
-    default = '',
-    open = '',
-    empty = '',
-    empty_open = '',
-    symlink = '',
-  },
-}
 
 local status_ok, nvim_tree = pcall(require, 'nvim-tree')
 if not status_ok then
@@ -69,6 +49,30 @@ nvim_tree.setup {
     enable = true,
     ignore = false,
     timeout = 500,
+  },
+  renderer = {
+    icons = {
+      glyphs = {
+        default = '',
+        symlink = '',
+        git = {
+          unstaged = '',
+          staged = 'S',
+          unmerged = '',
+          renamed = '➜',
+          deleted = '',
+          untracked = 'U',
+          ignored = '◌',
+        },
+        folder = {
+          default = '',
+          open = '',
+          empty = '',
+          empty_open = '',
+          symlink = '',
+        },
+      },
+    },
   },
   view = {
     width = 30,
