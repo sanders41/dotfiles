@@ -69,6 +69,8 @@ packer.startup(function()
   use "akinsho/toggleterm.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
   use "williamboman/nvim-lsp-installer"
+  use "L3MON4D3/LuaSnip"
+  use "saadparwaiz1/cmp_luasnip"
   use {
     'iamcco/markdown-preview.nvim',
     ft = 'markdown',
