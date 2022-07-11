@@ -64,6 +64,7 @@ packer.startup(function()
   use 'mhartington/formatter.nvim'
   use 'cespare/vim-toml'
   use 'nvim-telescope/telescope.nvim'
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'simrat39/rust-tools.nvim'
   use 'rust-lang/rust.vim'
   use "akinsho/toggleterm.nvim"
