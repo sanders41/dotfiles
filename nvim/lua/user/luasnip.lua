@@ -1,12 +1,13 @@
-local status_ok, luasnip = pcall(require, 'luasnip')
+local status_ok, ls = pcall(require, 'luasnip')
 if not status_ok then
   print('error loading luasnip')
   return
 end
 
 local types = require "luasnip.util.types"
+local snippet = ls.snippet
 
-luasnip.config.set_config {
+ls.config.set_config {
   history = true,
 
   -- Update as you type
@@ -21,34 +22,31 @@ luasnip.config.set_config {
   },
 }
 
-luasnip.add_snippets("all", {
-  luasnip.add_snippet.parser.parse_snippet("expand", "--hello world"),
-})
-
-luasnip.add_snippet("python", {
-  luasnip.parser.parse_snippet("ifname", 'if __name__ == "__main__":\n    raise SystemExit(main())'),
+ls.add_snippets("python", {
+  snippet("ifname", {
+    ls.text_node({"def main() -> int:", "    return 0", "", "", 'if __name__ == "__main__":', "    raise SystemExit(main())"}),
+  })
 })
 
 -- Expand the current item or jump to the next item within a snippet
---vim.keymap.set({ "i", "s" }, "<c-k>", function()
 vim.keymap.set({ "i", "s" }, "<c-k>", function()
-  if luasnip.expand_or_jumpable() then
-    luasnip.expand_or_jump()
+  if ls.expand_or_jumpable() then
+    ls.expand_or_jump()
   end
 end, { silent = true })
 
 -- <c-j> is my jump backwards key.
 -- this always moves to the previous item within the snippet
 vim.keymap.set({ "i", "s" }, "<c-j>", function()
-  if luasnip.jumpable(-1) then
-    luasnip.jump(-1)
+  if ls.jumpable(-1) then
+    ls.jump(-1)
   end
 end, { silent = true })
 
 -- <c-l> is selecting within a list of options.
 -- This is useful for choice nodes (introduced in the forthcoming episode 2)
 vim.keymap.set("i", "<c-l>", function()
-  if luasnip.choice_active() then
-    luasnip.change_choice(1)
+  if ls.choice_active() then
+    ls.change_choice(1)
   end
 end)
