@@ -1,5 +1,5 @@
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+local opts = { silent = true }
+local keymap = vim.keymap.set
 
 -- Telescope key maps
 keymap("n", "ff", "<cmd>Telescope find_files<cr>", opts)
