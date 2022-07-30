@@ -7,7 +7,7 @@ if test -f "$ZSHRC"; then
   mv "$ZSHRC" "$ZSHRC.backup"
 fi
 
-ln -s "$HOME/dotfiles/zsh/.zshrc"  "$ZSHRC"
+ln -s "$HOME/dotfiles/zsh/.zshrc" "$ZSHRC"
 
 # Make a backup of the neovim config if it exists then symlink it to dotfiles
 NVIM_DIR="$HOME/.config/nvim"
@@ -24,3 +24,12 @@ if test -f "$P10K"; then
 fi
 
 ln -s "$HOME/dotfiles/powerlevel10k/.p10k.zsh" "$P10K"
+
+# Make a backup of the kitty config if it exists then symlink it to dotfiles
+KITTY="$HOME/.config/kitty/kitty.conf"
+
+if test -f "$KITTY"; then
+  mv "$KITTY" "$KITTY.backup"
+fi
+
+ln -s "$HOME/dotfiles/kitty/kitty.conf" "$KITTY"
