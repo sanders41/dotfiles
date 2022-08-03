@@ -123,6 +123,9 @@ alias weh="weather-command cli zip 27455 -i --am-pm -f hourly"
 alias wet="weather-command tui zip 27455 -i --am-pm"
 alias cdp="cd $HOME/development/python"
 alias cdr="cd $HOME/development/rust"
+alias ds="docker stop \$(docker ps -q)"
+alias dsp="docker system prune -f"
+alias dspv="docker system prune -f --all --volumes"
 gitbd() {
   git branch -d $1 && git push origin --delete $1
 }
