@@ -32,6 +32,7 @@ set.smartcase = true
 
 -- show hidden characters
 set.list = true
+set.listchars = {eol = "↲"}
 set.listchars:append({extends = '»', precedes = '«', trail = '•'})
 
 vim.g.vscode_style = 'dark'
