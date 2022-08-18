@@ -5,7 +5,9 @@ if not status_ok then
 end
 
 local types = require "luasnip.util.types"
-local snippet = ls.snippet
+local s = ls.snippet
+local t = ls.text_node
+local i = ls.insert_node
 
 ls.config.set_config {
   history = true,
@@ -23,8 +25,10 @@ ls.config.set_config {
 }
 
 ls.add_snippets("python", {
-  snippet("ifname", {
-    ls.text_node({"def main() -> int:", "    return 0", "", "", 'if __name__ == "__main__":', "    raise SystemExit(main())"}),
+  s("ifname", {
+    t({"def main() -> int:", "    "}),
+    i(1),
+    t({"", "    return 0", "", "", 'if __name__ == "__main__":', "    raise SystemExit(main())"}),
   })
 })
 
