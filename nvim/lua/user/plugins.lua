@@ -73,6 +73,7 @@ packer.startup(function()
   use "williamboman/nvim-lsp-installer"
   use "L3MON4D3/LuaSnip"
   use "saadparwaiz1/cmp_luasnip"
+  use "kylechui/nvim-surround"
   use {
     'iamcco/markdown-preview.nvim',
     ft = 'markdown',
