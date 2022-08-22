@@ -44,6 +44,7 @@ packer.startup(function()
   use 'nvim-lua/plenary.nvim' -- Used by a lot of plugins
   use 'neovim/nvim-lspconfig'
   use 'Mofiqul/vscode.nvim'
+  use 'folke/tokyonight.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
