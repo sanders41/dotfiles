@@ -35,8 +35,11 @@ set.list = true
 set.listchars = {eol = "↲"}
 set.listchars:append({extends = '»', precedes = '«', trail = '•'})
 
-vim.g.vscode_style = 'dark'
-cmd[[colorscheme vscode]]
+-- vim.g.vscode_style = 'dark'
+-- cmd[[colorscheme vscode]]
+vim.g.tokyonight_transparent = true
+vim.g.tokyonight_style = "night"
+cmd("colorscheme tokyonight")
 
 cmd [[autocmd TermOpen * setlocal nonumber norelativenumber]]
 

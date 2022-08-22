@@ -6,7 +6,8 @@ end
 
 lualine.setup({
   options = {
-    theme = 'vscode',
+    -- theme = 'vscode',
+    theme = 'tokyonight',
   },
   sections = {
     lualine_a = {{'filename', path = 2}},
