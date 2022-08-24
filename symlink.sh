@@ -39,6 +39,6 @@ KITTY_THEME=current-theme.conf
 
 if test -f "$KITTY_THEME"; then
   mv "$KITTY_THEME" "$KITTY_THEME.backup"
-fi 
+fi
 
 ln -s "$HOME/dotfiles/kitty/current-theme.conf" "$KITTY_THEME"
