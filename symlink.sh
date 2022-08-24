@@ -33,3 +33,12 @@ if test -f "$KITTY"; then
 fi
 
 ln -s "$HOME/dotfiles/kitty/kitty.conf" "$KITTY"
+
+# Make a backup of the kitty theme if it exists then symlink it to dotfiles
+KITTY_THEME=current-theme.conf
+
+if test -f "$KITTY_THEME"; then
+  mv "$KITTY_THEME" "$KITTY_THEME.backup"
+fi
+
+ln -s "$HOME/dotfiles/kitty/current-theme.conf" "$KITTY_THEME"
