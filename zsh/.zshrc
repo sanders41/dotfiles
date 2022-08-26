@@ -168,3 +168,7 @@ fi
 if command -v brew > /dev/null; then
   alias bu="brew update && brew upgrade"
 fi
+
+if command -v apt > /dev/null; then
+  alias au="sudo apt update && sudo apt upgrade"
+fi
