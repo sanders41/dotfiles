@@ -1,6 +1,6 @@
-local status_ok, ls = pcall(require, 'luasnip')
+local status_ok, ls = pcall(require, "luasnip")
 if not status_ok then
-  print('error loading luasnip')
+  print("error loading luasnip")
   return
 end
 

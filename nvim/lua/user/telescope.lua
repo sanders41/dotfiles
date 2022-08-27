@@ -1,6 +1,6 @@
-local telescope_status_ok, telescope = pcall(require, 'telescope')
+local telescope_status_ok, telescope = pcall(require, "telescope")
 if not telescope_status_ok then
-  print('error loading telescope')
+  print("error loading telescope")
   return
 end
 
@@ -16,4 +16,4 @@ telescope.setup {
   }
 }
 
-require('telescope').load_extension('fzf')
+require("telescope").load_extension("fzf")
