@@ -75,6 +75,20 @@ Manjaro/Arch
 sudo pacman -S lua-language-server
 ```
 
+### Luarocks
+
+Mac
+
+```sh
+brew install Luarocks
+```
+
+Manjaro/Arch
+
+```sh
+sudo pacman -S Luarocks
+```
+
 ### Install plugins for neovim
 
 Open neovim
