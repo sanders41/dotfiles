@@ -5,8 +5,11 @@ if not status_ok then
 end
 
 local lspconfig = require("lspconfig")
-
-local servers = { "pyright", "rust_analyzer" }
+local servers = { "pyright", "rust_analyzer", "sumneko_lua" }
+local lsp_flags = {
+  -- This is the default in Nvim 0.7+
+  debounce_text_changes = 150,
+}
 
 lsp_installer.setup {
   ensure_installed = servers
@@ -16,6 +19,7 @@ for _, server in pairs(servers) do
   local opts = {
     on_attach = require("user.lsp.handlers").on_attach,
     capabilities = require("user.lsp.handlers").capabilities,
+    flags = lsp_flags,
   }
   local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
   if has_custom_opts then

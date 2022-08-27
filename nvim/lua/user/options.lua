@@ -1,7 +1,7 @@
 local cmd = vim.cmd
 local set = vim.opt
 
-set.encoding = 'utf-8'
+set.encoding = "utf-8"
 set.scrolloff = 2
 set.sidescrolloff = 2
 set.tabstop = 2
@@ -10,14 +10,14 @@ set.softtabstop = 2
 set.expandtab = true
 set.smartindent = true
 set.wrap = false
-set.mouse = 'a'
+set.mouse = "a"
 set.relativenumber = true
-set.number = true  -- Show the actual number for the line we're on
+set.number = true  -- Show the actual number for the line we"re on
 set.splitright = true
 set.splitbelow = true
 set.showmatch = true
-set.colorcolumn = '100'
-set.clipboard = 'unnamedplus'
+set.colorcolumn = "100"
+set.clipboard = "unnamedplus"
 set.swapfile = false
 set.termguicolors = true
 set.completeopt = { "menuone", "noselect" }
@@ -33,9 +33,9 @@ set.smartcase = true
 -- show hidden characters
 set.list = true
 set.listchars = {eol = "↲"}
-set.listchars:append({extends = '»', precedes = '«', trail = '•'})
+set.listchars:append({extends = "»", precedes = "«", trail = "•"})
 
--- vim.g.vscode_style = 'dark'
+-- vim.g.vscode_style = "dark"
 -- cmd[[colorscheme vscode]]
 -- vim.g.tokyonight_transparent = true
 vim.g.tokyonight_style = "night"
@@ -43,4 +43,4 @@ cmd("colorscheme tokyonight")
 
 cmd [[autocmd TermOpen * setlocal nonumber norelativenumber]]
 
-set.shell = 'zsh --login'
+set.shell = "zsh --login"

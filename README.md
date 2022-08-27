@@ -29,22 +29,50 @@ the installed servers open the info panel `:LspInstallInfo` and press U.
 
 For Telescope `live_view` to work ripgrep needs to be installed.
 
-- Mac
+Mac
 
-  ```sh
-  brew install ripgrep
-  ```
+```sh
+brew install ripgrep
+```
 
-- Manjaro/Arch
+Manjaro/Arch
 
-  ```sh
-  sudo pacman -S ripgrep
-  ```
+```sh
+sudo pacman -S ripgrep
+```
 
 ### Install packer
 
 ```sh
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+### Install luajit
+
+Mac
+
+```sh
+brew install luajit
+```
+
+Manjaro/Arch
+
+```sh
+sudo pacman -S luajit
+```
+
+### Lua language server
+
+Mac
+
+```sh
+brew install lua-language-server
+```
+
+Manjaro/Arch
+
+```sh
+sudo pacman -S lua-language-server
 ```
 
 ### Install plugins for neovim
@@ -60,6 +88,7 @@ Then install plugins with Packer
 ```sh
 :PackerInstall
 ```
+
 
 ## ZSH
 
