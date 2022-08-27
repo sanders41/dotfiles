@@ -5,7 +5,6 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
-        # - repo: https://github.com/Calinou/pre-commit-luacheck
   - repo: https://github.com/lunarmodules/luacheck
     rev: v1.0.0
     hooks:
