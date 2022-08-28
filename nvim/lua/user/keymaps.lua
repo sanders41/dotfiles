@@ -18,8 +18,11 @@ keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
 -- NvimTree
-keymap("n", "\\", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- bbye
+keymap("n", "<leader>q", ":Bdelete<CR>", opts)
