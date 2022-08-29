@@ -27,3 +27,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Close buffers
 keymap("n", "<leader>q", ":Bdelete<CR>", opts)  -- bbye close single buffer
 keymap("n", "<leader><S-q>", ":%bd<CR>", opts)  -- close all buffers
+
+-- Git
+keymap("n", "gb", ":Git blame<CR>", opts)
