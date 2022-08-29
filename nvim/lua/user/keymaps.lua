@@ -24,5 +24,6 @@ keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- bbye
-keymap("n", "<leader>q", ":Bdelete<CR>", opts)
+-- Close buffers
+keymap("n", "<leader>q", ":Bdelete<CR>", opts)  -- bbye close single buffer
+keymap("n", "<leader><S-q>", ":%bd<CR>", opts)  -- close all buffers
