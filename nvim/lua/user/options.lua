@@ -2,7 +2,7 @@ local cmd = vim.cmd
 local set = vim.opt
 
 set.encoding = "utf-8"
-set.scrolloff = 2
+set.scrolloff = 5
 set.sidescrolloff = 2
 set.tabstop = 2
 set.shiftwidth = 2
