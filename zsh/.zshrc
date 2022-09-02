@@ -176,3 +176,5 @@ fi
 # Work specific stuff
 alias nbp="nox -s \"build(prod)\""
 alias nbd="nox -s \"build(dev)\""
+alias nd="nox -s dev"
+alias nds="nox -s dev -- shell"
