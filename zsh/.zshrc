@@ -172,3 +172,7 @@ fi
 if command -v apt > /dev/null; then
   alias au="sudo apt update && sudo apt upgrade"
 fi
+
+# Work specific stuff
+alias nbp="nox -s \"build(prod)\""
+alias nbd="nox -s \"build(dev)\""
