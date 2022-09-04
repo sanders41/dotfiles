@@ -31,14 +31,4 @@ keymap("n", "<leader><S-q>", ":%bd<CR>", opts)  -- close all buffers
 -- Git
 keymap("n", "gb", ":Git blame<CR>", opts)
 
-keymap (
-  "n",
-  "<leader><leader>w",
-  function()
-    if vim.bo.filetype == "lua" then
-      vim.cmd(":w")
-      vim.cmd(":luafile %")
-    end
-  end,
-  opts
-)
+keymap ("n", "<leader><leader>w", ":w | source %<CR>", opts)
