@@ -83,6 +83,7 @@ packer.startup(function()
     run = "cd app && npm install"
   }
   use "sumneko/lua-language-server"
+  use "milisims/nvim-luaref"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
