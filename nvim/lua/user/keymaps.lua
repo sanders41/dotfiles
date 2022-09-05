@@ -2,8 +2,9 @@ local opts = { silent = true }
 local keymap = vim.keymap.set
 
 -- Telescope key maps
-keymap("n", "ff", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "ff", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "fh", "<cmd>Telescope find_files hidden=true<CR>", opts)
+keymap("n", "fg", "<cmd>Telescope live_grep<CR>", opts)
 
 -- Window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
