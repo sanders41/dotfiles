@@ -1,6 +1,16 @@
 local cmd = vim.cmd
 local set = vim.opt
 
+local function colorcolumn()
+  local column = os.getenv("COLORCOLUMN")
+
+  if column then
+    return column
+  end
+
+  return "100"
+end
+
 set.encoding = "utf-8"
 set.scrolloff = 5
 set.sidescrolloff = 2
@@ -16,7 +26,7 @@ set.number = true  -- Show the actual number for the line we"re on
 set.splitright = true
 set.splitbelow = true
 set.showmatch = true
-set.colorcolumn = "100"
+set.colorcolumn = colorcolumn()
 set.clipboard = "unnamedplus"
 set.swapfile = false
 set.termguicolors = true
