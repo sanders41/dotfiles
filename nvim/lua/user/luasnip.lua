@@ -24,11 +24,21 @@ ls.config.set_config {
   },
 }
 
+-- Python
 ls.add_snippets("python", {
   s("ifname", {
     t({"def main() -> int:", "    "}),
     i(1),
     t({"", "    return 0", "", "", 'if __name__ == "__main__":', "    raise SystemExit(main())"}),
+  })
+})
+
+-- Rust
+ls.add_snippets("rust", {
+  s("rt", {
+    t({"#[cfg(test)]", "mod tests {", "    "}),
+    i(1),
+    t({"", "}"}),
   })
 })
 
