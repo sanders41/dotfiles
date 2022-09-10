@@ -6,8 +6,12 @@ end
 
 local types = require "luasnip.util.types"
 local s = ls.snippet
+-- local c = ls.choice_node
 local t = ls.text_node
 local i = ls.insert_node
+local fmt = require("luasnip.extras.fmt").fmt
+-- local f = ls.function_node
+-- local d = ls.dyncmic_node
 
 ls.config.set_config {
   history = true,
@@ -24,22 +28,136 @@ ls.config.set_config {
   },
 }
 
+-- local same = function(index)
+--   return f(function(arg)
+--      return arg[1]
+--   end, { index })
+-- end
+
 -- Python
 ls.add_snippets("python", {
-  s("ifname", {
-    t({"def main() -> int:", "    "}),
+  s(
+    "ifname",
+    fmt([[
+def main() -> int:
+    {}
+
+    return 0
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+    ]],
+    {
+      i(0),
+    })),
+
+  s(
+    "def",
+    fmt([[
+def {}({}) -> {}:
+    {}
+    ]],
+    {
+      i(1),
+      i(2),
+      i(3),
+      i(4)
+    })),
+
+  -- new method
+  s(
+    "defm",
+    fmt([[
+def {}(self{}) -> {}:
+    {}
+    ]],
+    {
+      i(1),
+      i(2),
+      i(3),
+      i(4),
+    })),
+
+  s(
+    "@classmethod",
+    fmt([[
+@classmethod
+def {}(cls{}) -> {}:
+    {}
+    ]],
+    {
+      i(1),
+      i(2),
+      i(3),
+      i(4),
+    })),
+
+  s(
+    "@staticmethod",
+    fmt([[
+@staticmethod
+def {}({}) -> {}:
+    {}
+    ]],
+    {
+      i(1),
+      i(2),
+      i(3),
+      i(4),
+    })),
+
+  s(
+    "class",
+    fmt([[
+class {}:
+    def __init__(self{}) -> None:
+        {}
+  ]],
+--  {
+--    i(1),
+--    i(2),
+--    f(function(vars)
+--      local split_vars = vim.split(vars[1][1], ",", true)
+--      if split_vars == nil then
+--        return ""
+--      end
+--      local return_vars = "self."
+--      for split in split_vars do
+--        local stripped = vim.split(split[1], ":", true)
+--        if stripped ~= nil then
+--          return_vars = return_vars .. stripped
+--        end
+--        return_vars = return_vars .. split
+--      end
+--
+--      return return_vars
+--    end, { 2 }),
+--  })),
+  {
     i(1),
-    t({"", "    return 0", "", "", 'if __name__ == "__main__":', "    raise SystemExit(main())"}),
-  })
+    i(2),
+    i(3),
+  })),
+
+  -- from __future__ import annotations
+  s("future", {
+    t({"from __future__ import annotations"}),
+  }),
 })
 
 -- Rust
 ls.add_snippets("rust", {
-  s("rt", {
-    t({"#[cfg(test)]", "mod tests {", "    "}),
-    i(1),
-    t({"", "}"}),
-  })
+  s(
+    "rt",
+    fmt([[
+#[cfg(test)]
+mod tests {{
+    {}
+}}
+    ]],
+    {
+      i(1),
+    })),
 })
 
 -- Expand the current item or jump to the next item within a snippet
@@ -64,3 +182,6 @@ vim.keymap.set("i", "<c-l>", function()
     ls.change_choice(1)
   end
 end)
+
+-- shorcut to source luasnips file again, which will reload snippets
+vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/user/luasnip.lua<CR>")
