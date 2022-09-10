@@ -10,7 +10,7 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
--- local f = ls.function_node
+local f = ls.function_node
 -- local d = ls.dyncmic_node
 
 ls.config.set_config {
@@ -113,30 +113,41 @@ class {}:
     def __init__(self{}) -> None:
         {}
   ]],
---  {
---    i(1),
---    i(2),
---    f(function(vars)
---      local split_vars = vim.split(vars[1][1], ",", true)
---      if split_vars == nil then
---        return ""
---      end
---      local return_vars = "self."
---      for split in split_vars do
---        local stripped = vim.split(split[1], ":", true)
---        if stripped ~= nil then
---          return_vars = return_vars .. stripped
---        end
---        return_vars = return_vars .. split
---      end
---
---      return return_vars
---    end, { 2 }),
---  })),
   {
     i(1),
     i(2),
-    i(3),
+    f(function(vars)
+      local split_vars = vim.split(vars[1][1], ",", true)
+      if split_vars == nil then
+        return ""
+      end
+      local return_vars = {}
+      for index, split in ipairs(split_vars) do
+        -- Skipp the first index because it will be self
+        if index > 1 then
+          -- Remove : and after (type hint) and = and after (default value)
+          local stripped = vim.split(vim.split(split, ":", true)[1], "=", true)[1]
+          local trimmed = vim.trim(stripped)
+
+          if trimmed ~= "" and trimmed ~= "*" and trimmed ~= "/" and trimmed ~= "*args" and trimmed ~= "**kwargs" then
+            -- After the first variable the editor doesn't space so add the sapaces here.
+            local v = "        self." .. trimmed .. " = " .. trimmed
+
+            -- Index 2 is the first varialbe, 1 is self
+            if index == 2 then
+              v = "self." .. trimmed .. " = " .. trimmed
+            end
+            table.insert(return_vars, v)
+          end
+        end
+      end
+
+      if next(return_vars) == nil then
+        return ""
+      end
+
+      return return_vars
+    end, { 2 }),
   })),
 
   -- from __future__ import annotations
@@ -159,6 +170,8 @@ mod tests {{
       i(1),
     })),
 })
+
+
 
 -- Expand the current item or jump to the next item within a snippet
 vim.keymap.set({ "i", "s" }, "<c-k>", function()
