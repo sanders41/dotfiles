@@ -6,7 +6,8 @@ end
 
 local types = require "luasnip.util.types"
 local s = ls.snippet
--- local c = ls.choice_node
+-- local sn = ls.snippet_node
+local c = ls.choice_node
 local t = ls.text_node
 local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
@@ -35,6 +36,7 @@ ls.config.set_config {
 -- end
 
 -- Python
+
 ls.add_snippets("python", {
   s(
     "ifname",
@@ -58,24 +60,10 @@ def {}({}) -> {}:
     {}
     ]],
     {
-      i(1),
-      i(2),
-      i(3),
+      i(1, "name"),
+      c(2, { i(1), { t"self, ", i(1) } }),
+      i(3, "None"),
       i(4)
-    })),
-
-  -- new method
-  s(
-    "defm",
-    fmt([[
-def {}(self{}) -> {}:
-    {}
-    ]],
-    {
-      i(1),
-      i(2),
-      i(3),
-      i(4),
     })),
 
   s(
@@ -86,9 +74,9 @@ def {}(cls{}) -> {}:
     {}
     ]],
     {
-      i(1),
+      i(1, "name"),
       i(2),
-      i(3),
+      i(3, "None"),
       i(4),
     })),
 
@@ -100,9 +88,9 @@ def {}({}) -> {}:
     {}
     ]],
     {
-      i(1),
+      i(1, "name"),
       i(2),
-      i(3),
+      i(3, "None"),
       i(4),
     })),
 
@@ -154,6 +142,15 @@ class {}:
   s("future", {
     t({"from __future__ import annotations"}),
   }),
+
+  s('"""', fmt([[
+"""{}"""
+{}
+    ]],
+    {
+      i(1),
+      i(2),
+    })),
 })
 
 -- Rust
