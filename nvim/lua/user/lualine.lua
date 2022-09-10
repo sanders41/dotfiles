@@ -6,15 +6,14 @@ end
 
 lualine.setup({
   options = {
-    -- theme = "vscode",
     theme = "tokyonight",
   },
   sections = {
-    lualine_a = {{"filename", path = 2}},
-    lualine_b = {"branch", "diff"},
+    lualine_a = {"mode"},
+    lualine_b = {{"filename", path=2}, "branch", "diff", "diagnostics"},
     lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {"progress"},
+    lualine_z = {"location"},
   },
 })
