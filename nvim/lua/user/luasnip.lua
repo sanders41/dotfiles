@@ -119,7 +119,7 @@ class {}:
 
           if trimmed ~= "" and trimmed ~= "*" and trimmed ~= "/" and trimmed ~= "*args" and trimmed ~= "**kwargs" then
             -- After the first variable the editor doesn't space so add the sapaces here.
-            local v = "        self." .. trimmed .. " = " .. trimmed
+            local v = "\t\tself." .. trimmed .. " = " .. trimmed
 
             -- Index 2 is the first varialbe, 1 is self
             if index == 2 then
