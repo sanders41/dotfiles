@@ -2,9 +2,9 @@ local opts = { silent = true }
 local keymap = vim.keymap.set
 
 -- Telescope key maps
-keymap("n", "ff", "<cmd>Telescope find_files<CR>", opts)
-keymap("n", "fh", "<cmd>Telescope find_files hidden=true<CR>", opts)
-keymap("n", "fg", "<cmd>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<leader>fh", "<cmd>Telescope find_files hidden=true<CR>", opts)
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
 
 -- Window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -30,6 +30,6 @@ keymap("n", "<leader>q", ":Bdelete<CR>", opts)  -- bbye close single buffer
 keymap("n", "<leader><S-q>", ":%bd<CR>", opts)  -- close all buffers
 
 -- Git
-keymap("n", "gb", ":Git blame<CR>", opts)
+keymap("n", "<leader>gb", ":Git blame<CR>", opts)
 
 keymap ("n", "<leader><leader>w", ":w | source %<CR>", opts)
