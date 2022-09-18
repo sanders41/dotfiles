@@ -12,7 +12,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
   debug = false,
   sources = {
-    formatting.prettier.with { extra_args = { "--single-quote" } },
+    formatting.prettier,
     formatting.black,
     formatting.isort.with { extra_args = { "--profile=black" } },
     formatting.rustfmt,
