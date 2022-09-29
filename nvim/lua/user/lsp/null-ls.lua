@@ -8,11 +8,24 @@ end
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
+-- local sources = { null_ls.builtins.completion.spell }
 
 null_ls.setup {
   debug = false,
   sources = {
-    formatting.prettier,
+    formatting.prettier.with { filetypes = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "vue",
+      "css",
+      "scss",
+      "less",
+      "html",
+      "json",
+      "jsonc",
+    }},
     formatting.black,
     formatting.isort.with { extra_args = { "--profile=black" } },
     formatting.rustfmt,
