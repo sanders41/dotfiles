@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 alias venv="virtualenv -p $HOME/.pyenv/shims/python .venv && . .venv/bin/activate && pip install -U pip"
-alias activate=". .venv/bin/activate"
+alias activate=". .venv/bin/activate && pip install -U pip"
 alias gm="git checkout main"
 alias gs="git status"
 alias gpom="git pull origin main --ff-only"
