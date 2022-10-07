@@ -88,7 +88,7 @@ M.on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
   if client.name == "tsserver" or client.name == "rust_analyzer" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
