@@ -85,6 +85,7 @@ packer.startup(function()
   use "sumneko/lua-language-server"
   use "milisims/nvim-luaref"
   use "rhysd/git-messenger.vim"
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
