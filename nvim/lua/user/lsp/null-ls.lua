@@ -8,7 +8,6 @@ end
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
--- local sources = { null_ls.builtins.completion.spell }
 
 null_ls.setup {
   debug = false,
@@ -39,7 +38,8 @@ null_ls.setup {
   },
 
   on_attach = function(client)
-    if client.server_capabilities.document_formatting then
+    -- if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.documentFormattingProvider then
       vim.cmd([[
       augroup LspFormatting
         autocmd! * <buffer>
