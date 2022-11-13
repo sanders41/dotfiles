@@ -1,0 +1,60 @@
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 20
+style = "bold yellow"
+
+[container]
+format = '[❯ $symbol \[$name\]]($style) '
+
+[dart]
+format = "[❯ $symbol($version )]($style)"
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncation_length = 5
+truncate_to_repo = false
+truncation_symbol = "…/"
+
+[docker_context]
+format = "[❯ $symbol$context]($style) "
+
+[git_branch]
+format = "[❯ $symbol$branch(:$remote_branch)]($style) "
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+[golang]
+format = "[❯ $symbol($version )]($style)"
+
+[helm]
+format = "[❯ $symbol($version )]($style)"
+
+[java]
+format = "[❯ ${symbol}(${version} )]($style)"
+
+[line_break]
+disabled = true
+
+[lua]
+format = "[❯ $symbol($version )]($style)"
+
+[nodejs]
+format = "[❯ $symbol($version )]($style)"
+
+[package]
+disabled = true
+
+[python]
+format = '[❯ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[rust]
+format = "[❯ $symbol($version )]($style)"
