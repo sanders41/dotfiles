@@ -4,11 +4,11 @@ charging_symbol = "🔌"
 discharging_symbol = "⚡"
 
 [[battery.display]]
-threshold = 10
+threshold = 11
 style = "bold red"
 
 [[battery.display]]
-threshold = 20
+threshold = 21
 style = "bold yellow"
 
 [container]
