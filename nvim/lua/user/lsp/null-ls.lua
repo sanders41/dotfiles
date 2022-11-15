@@ -29,11 +29,7 @@ null_ls.setup {
     formatting.isort.with { extra_args = { "--profile=black" } },
     formatting.rustfmt,
     formatting.markdownlint,
-    diagnostics.flake8.with {
-      extra_args = {
-        "--ignore=E203,E231,E501,D100,D101,D102,D103,D104,D105,D106,D107,D401",
-      },
-    },
+    diagnostics.ruff,
     diagnostics.mypy,
   },
 
