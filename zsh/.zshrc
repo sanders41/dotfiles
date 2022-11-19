@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias vim="nvim"
-alias venv="virtualenv -p $HOME/.pyenv/shims/python .venv && . .venv/bin/activate && pip install -U pip"
+alias venv="virtualenv .venv && . .venv/bin/activate && pip install -U pip"
 alias activate=". .venv/bin/activate && pip install -U pip"
 alias gm="git checkout main"
 alias gs="git status"
