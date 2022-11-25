@@ -26,6 +26,7 @@ null_ls.setup {
       "jsonc",
     }},
     formatting.black,
+    formatting.gofmt.with { extra_args = { "-w" } },
     formatting.isort.with { extra_args = { "--profile=black" } },
     formatting.rustfmt,
     formatting.markdownlint,

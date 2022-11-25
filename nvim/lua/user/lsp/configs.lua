@@ -5,7 +5,7 @@ if not status_ok then
 end
 
 local lspconfig = require("lspconfig")
-local servers = { "pyright", "rust_analyzer", "sumneko_lua" }
+local servers = { "gopls", "pyright", "rust_analyzer", "sumneko_lua" }
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
