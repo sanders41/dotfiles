@@ -54,6 +54,9 @@ format = "[❯ $symbol($version )]($style)"
 [nodejs]
 format = "[❯ $symbol($version )]($style)"
 
+[os]
+disabled=false
+
 [package]
 disabled = true
 
