@@ -33,7 +33,7 @@ set.termguicolors = true
 set.completeopt = { "menuone", "noselect" }
 set.cursorline = true
 cmd [[autocmd FileType py,rs setlocal shiftwidth=4 tabstop=4 softtabstop=4]]
-cmd [[autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab]]
+cmd [[autocmd FileType go setlocal noexpandtab]]
 cmd [[set iskeyword+=-]]  -- consider - words one word. i.e. one-word
 cmd [[set iskeyword+=_]]  -- consider _ words one word. i.e. one_word
 
@@ -44,7 +44,7 @@ set.smartcase = true
 -- show hidden characters
 set.list = true
 set.listchars = {eol = "↲"}
-set.listchars:append({extends = "»", precedes = "«", trail = "•"})
+set.listchars:append({tab = "» ", extends = "»", precedes = "«", trail = "•"})
 
 -- vim.g.tokyonight_style = "night"
 cmd("colorscheme tokyonight-night")
