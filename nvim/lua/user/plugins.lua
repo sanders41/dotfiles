@@ -86,6 +86,7 @@ packer.startup(function()
   use "milisims/nvim-luaref"
   use "rhysd/git-messenger.vim"
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use "nvim-treesitter/playground"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
