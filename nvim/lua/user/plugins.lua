@@ -51,7 +51,7 @@ packer.startup(function()
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate"
   }
-  use "kyazdani42/nvim-tree.lua"
+  use "nvim-tree/nvim-tree.lua"
   use "lewis6991/gitsigns.nvim"
   use "hoob3rt/lualine.nvim"
   use "akinsho/bufferline.nvim"
