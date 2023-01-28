@@ -1,6 +1,6 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, mason = pcall(require, "mason")
 if not status_ok then
-  print("error loading nvim-lsp-installer")
+  print("error loading mason")
   return
 end
 
@@ -11,8 +11,17 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-lsp_installer.setup {
-  ensure_installed = servers
+mason.setup({
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
+    }
+  }
+})
+require("mason-lspconfig").setup {
+    ensure_installed = { "sumneko_lua" },
 }
 
 for _, server in pairs(servers) do
