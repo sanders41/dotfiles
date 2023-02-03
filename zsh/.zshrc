@@ -179,3 +179,4 @@ alias nd="nox -s dev"
 alias nds="nox -s dev -- shell"
 
 eval "$(starship init zsh)"
+eval "$(mcfly init zsh)"
