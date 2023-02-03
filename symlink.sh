@@ -42,3 +42,21 @@ if test -f "$KITTY_THEME"; then
 fi
 
 ln -s "$HOME/dotfiles/kitty/current-theme.conf" "$KITTY_THEME"
+
+# Link alacritty config
+ALACRITTY="$HOME/.config/alacritty/alacritty.yml"
+
+if test -f "$ALACRITTY"; then
+  mv "$ALACRITTY" "$ALACRITTY.backup"
+fi
+
+ln -s "$HOME/dotfiles/alacritty/alacritty.yml" "$ALACRITTY"
+
+# Link zellij config
+ZELLIJ="$HOME/zellij/config.kdl"
+
+if test -f "$ZELLIJ"; then
+  mv "$ZELLIJ" "$ZELLIJ.backup"
+file
+
+ln -s "$HOME/dotfiles/zellij/config.kdl" "$ZELLIJ"
