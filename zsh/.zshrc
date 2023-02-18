@@ -102,6 +102,7 @@ alias gpom="git pull origin main --ff-only"
 alias gpum="git pull upstream main --ff-only"
 alias gcam="git commit -am"
 alias gcb="git checkout -b"
+alias gc="git checkout"
 alias gbd="git branch -d"
 alias pl10ku="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 alias pyenvu="git -C $HOME/.pyenv pull"  # Only works if pyenv installed from github
