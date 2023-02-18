@@ -74,6 +74,7 @@ plugins=(vi-mode zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
+# Make cursor change with different vim modes
 _fix_cursor() {
    echo -ne '\e[5 q'
 }
