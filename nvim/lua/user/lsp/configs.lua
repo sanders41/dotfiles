@@ -20,9 +20,6 @@ mason.setup({
     }
   }
 })
-require("mason-lspconfig").setup {
-    ensure_installed = { "sumneko_lua" },
-}
 
 for _, server in pairs(servers) do
   local opts = {
