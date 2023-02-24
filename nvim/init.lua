@@ -1,5 +1,5 @@
 -- Change leader key to ,
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 require "user.options"
 require "user.keymaps"
