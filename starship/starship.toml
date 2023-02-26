@@ -1,3 +1,5 @@
+command_timeout = 1000
+
 [battery]
 full_symbol = "🔋"
 charging_symbol = "🔌"
