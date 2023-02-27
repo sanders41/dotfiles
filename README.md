@@ -140,7 +140,7 @@ git clone --depth=1 https://github.com/MichaelAquilina/zsh-you-should-use.git ${
 Install weather-command.
 
 ```sh
-pipx install weather-command[uvloop]
+pipx install weather-command
 ```
 
 Then update the zip in the `we`, `weh`, `wed` commands to match the desired zip, or change
