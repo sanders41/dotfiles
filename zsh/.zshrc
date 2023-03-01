@@ -161,11 +161,5 @@ if command -v apt > /dev/null; then
   alias au="sudo apt update && sudo apt upgrade"
 fi
 
-# Work specific stuff
-alias nbp="nox -s \"build(prod)\""
-alias nbd="nox -s \"build(dev)\""
-alias nd="nox -s dev"
-alias nds="nox -s dev -- shell"
-
 eval "$(starship init zsh)"
 eval "$(mcfly init zsh)"
