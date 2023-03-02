@@ -135,6 +135,7 @@ export PATH="$PATH:/home/paul/.local/bin"
 # Kitty ssh
 if [[ "${TERM}" == "xterm-kitty" ]]; then
   alias ssh="kitty +kitten ssh"
+  alias icat="kitty +kitten icat"  # view images in the terminal
 fi
 
 # OS Specific settings
