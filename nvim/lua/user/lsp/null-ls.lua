@@ -29,7 +29,7 @@ null_ls.setup {
     formatting.gofmt.with { extra_args = { "-w" } },
     formatting.isort.with { extra_args = { "--profile=black" } },
     formatting.rustfmt,
-    formatting.markdownlint,
+    diagnostics.markdownlint,
     diagnostics.ruff.with { extra_args = { "--ignore=E501" } },
     diagnostics.mypy,
   },
