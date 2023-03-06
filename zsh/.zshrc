@@ -96,6 +96,7 @@ precmd_functions+=(_fix_cursor)
 alias vim="nvim"
 alias venv="virtualenv .venv && . .venv/bin/activate && pip install -U pip"
 alias activate=". .venv/bin/activate && pip install -U pip"
+alias et="et -I"
 alias gm="git checkout main"
 alias gs="git status"
 alias gd="git diff"
