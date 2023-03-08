@@ -5,7 +5,8 @@ if not status_ok then
 end
 
 local lspconfig = require("lspconfig")
-local servers = { "gopls", "pyright", "rust_analyzer", "lua_ls" }
+-- local servers = { "gopls", "pyright", "rust_analyzer", "lua_ls" }
+local servers = { "gopls", "pyright", "lua_ls" }
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
@@ -33,3 +34,21 @@ for _, server in pairs(servers) do
   end
   lspconfig[server].setup(opts)
 end
+
+local rt = require("rust-tools")
+
+rt.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+  },
+  tools = {
+    inlay_hints = {
+      auto = false,
+    },
+  },
+})
