@@ -22,10 +22,13 @@ mason.setup({
   }
 })
 
+local capabilities = require("user.lsp.handlers").capabilities
+local custom_attach = require("user.lsp.handlers").on_attach
+
 for _, server in pairs(servers) do
   local opts = {
-    on_attach = require("user.lsp.handlers").on_attach,
-    capabilities = require("user.lsp.handlers").capabilities,
+    on_attach = custom_attach,
+    capabilities = capabilities,
     flags = lsp_flags,
   }
   local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
@@ -39,12 +42,10 @@ local rt = require("rust-tools")
 
 rt.setup({
   server = {
-    on_attach = function(_, bufnr)
-      -- Hover actions
-      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-      -- Code action groups
-      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-    end,
+    -- on_attach = function(_, bufnr)
+    on_attach = custom_attach,
+    capabilities = capabilities,
+    flags = lsp_flags
   },
   tools = {
     inlay_hints = {
