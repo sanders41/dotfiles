@@ -57,6 +57,16 @@ ZELLIJ="$HOME/zellij/config.kdl"
 
 if test -f "$ZELLIJ"; then
   mv "$ZELLIJ" "$ZELLIJ.backup"
-file
+fi
 
 ln -s "$HOME/dotfiles/zellij/config.kdl" "$ZELLIJ"
+
+# Link pip config
+
+PIP=$HOME/.config/pip/pip.conf
+
+if test -f "$PIP"; then
+  mv "$PIP" "$PIP.backup"
+fi
+
+ln -s "$HOME/dotfiles/pip/pip.conf" "$PIP"

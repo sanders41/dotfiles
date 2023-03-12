@@ -162,3 +162,7 @@ pipx install cookiecutter
 
 Then create the file `~/.cookiecutters/defaults.yaml` file with your desired defaults. An example
 can be found [here](https://cookiecutter.readthedocs.io/en/1.7.0/advanced/user_config.html)
+
+## pip
+
+Configure pip to require a virtual environment
