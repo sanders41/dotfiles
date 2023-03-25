@@ -88,6 +88,8 @@ packer.startup(function()
   use "rhysd/git-messenger.vim"
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use "nvim-treesitter/playground"
+  use "NoahTheDuke/vim-just"
+  use "IndianBoy42/tree-sitter-just"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
