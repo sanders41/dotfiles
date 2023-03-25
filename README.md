@@ -33,7 +33,7 @@ Mac
 brew install ripgrep
 ```
 
-Manjaro/Arch
+Arch
 
 ```sh
 sudo pacman -S ripgrep
@@ -53,7 +53,7 @@ Mac
 brew install luajit
 ```
 
-Manjaro/Arch
+Arch
 
 ```sh
 sudo pacman -S luajit
@@ -67,7 +67,7 @@ Mac
 brew install lua-language-server
 ```
 
-Manjaro/Arch
+Arch
 
 ```sh
 sudo pacman -S lua-language-server
@@ -81,7 +81,7 @@ Mac
 brew install Luarocks
 ```
 
-Manjaro/Arch
+Arch
 
 ```sh
 sudo pacman -S Luarocks
@@ -166,3 +166,7 @@ can be found [here](https://cookiecutter.readthedocs.io/en/1.7.0/advanced/user_c
 ## pip
 
 Configure pip to require a virtual environment
+
+## just treesitter
+
+Open vim and run `TSInstall just`
