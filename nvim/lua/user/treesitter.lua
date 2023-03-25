@@ -22,3 +22,5 @@ configs.setup {
     enable_autocmd = false,
   },
 }
+
+require("tree-sitter-just").setup({})
