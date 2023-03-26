@@ -5,7 +5,6 @@ if not status_ok then
 end
 
 local lspconfig = require("lspconfig")
--- local servers = { "gopls", "pyright", "rust_analyzer", "lua_ls" }
 local servers = { "gopls", "pyright", "lua_ls" }
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
@@ -37,6 +36,15 @@ for _, server in pairs(servers) do
   end
   lspconfig[server].setup(opts)
 end
+
+require('lspconfig').ruff_lsp.setup {
+  on_attach = custom_attach,
+  init_options = {
+    settings = {
+      args = {},
+    }
+  }
+}
 
 local rt = require("rust-tools")
 
