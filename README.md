@@ -170,3 +170,11 @@ Configure pip to require a virtual environment
 ## just treesitter
 
 Open vim and run `TSInstall just`
+
+## Ruff LSP
+
+Install the LSP servers
+
+```sh
+pipx isntall ruff-lsp
+```

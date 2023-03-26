@@ -25,12 +25,11 @@ null_ls.setup {
       "json",
       "jsonc",
     }},
+    formatting.isort.with { extra_args = { "--profile=black" } },
     formatting.black,
     formatting.gofmt.with { extra_args = { "-w" } },
-    formatting.isort.with { extra_args = { "--profile=black" } },
     formatting.rustfmt,
     diagnostics.markdownlint,
-    diagnostics.ruff.with { extra_args = { "--ignore=E501" } },
     diagnostics.mypy,
   },
 
