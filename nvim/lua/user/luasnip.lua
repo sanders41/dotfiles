@@ -54,6 +54,21 @@ if __name__ == "__main__":
     })),
 
   s(
+    "ifaname",
+    fmt([[
+async def main() -> int:
+    {}
+
+    return 0
+
+if __name__ == "__main__":
+    asyncio.run(main())
+    ]],
+    {
+      i(0),
+    })),
+
+  s(
     "def",
     fmt([[
 def {}({}) -> {}:
