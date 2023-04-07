@@ -5,11 +5,20 @@ if not status_ok then
 end
 
 bufferline.setup {
-   options = {
-     numbers = "none",
-     close_command = "Bdelete! %d",
-     right_mouse_command = "Bdelete! %d",
-     left_mouse_command = "buffer %d",
-     middle_mouse_command = nil,
-  },
+  options = {
+    numbers = "none",
+    close_command = "Bdelete! %d",
+    right_mouse_command = "Bdelete! %d",
+    left_mouse_command = "buffer %d",
+    middle_mouse_command = nil,
+    max_name_length = 30,
+    max_prefix_length = 30,
+    tab_size = 21,
+    diagnostics = false, -- | "nvim_lsp"
+    diagnostics_update_in_insert = false,
+    offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+    persist_buffer_sort = true,
+    separator_style = "thin", -- | "thick" | "thin" | { "any", "any" },
+    enforce_regular_tabs = true,
+  }
 }
