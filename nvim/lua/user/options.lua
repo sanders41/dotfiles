@@ -1,11 +1,11 @@
 local cmd = vim.cmd
 local set = vim.opt
 
-local function colorcolumn()
-  local column = os.getenv("COLORCOLUMN")
+local function line_length()
+  local length = os.getenv("LINELENGTH")
 
-  if column then
-    return column
+  if length then
+    return length
   end
 
   return "100"
@@ -26,7 +26,7 @@ set.number = true  -- Show the actual number for the line we"re on
 set.splitright = true
 set.splitbelow = true
 set.showmatch = true
-set.colorcolumn = colorcolumn()
+set.colorcolumn = line_length()
 set.clipboard = "unnamedplus"
 set.swapfile = false
 set.termguicolors = true
