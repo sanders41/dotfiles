@@ -4,6 +4,16 @@ if not null_ls_status_ok then
   return
 end
 
+local function line_length()
+  local length = os.getenv("LINELENGTH")
+
+  if length then
+    return length
+  end
+
+  return "100"
+end
+
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
@@ -25,10 +35,18 @@ null_ls.setup {
       "json",
       "jsonc",
     }},
-    formatting.isort.with { extra_args = { "--profile=black" } },
     formatting.black,
     formatting.gofmt.with { extra_args = { "-w" } },
     formatting.rustfmt,
+    formatting.ruff.with {
+      extra_args = {
+        "--select",
+        "I001",
+        "--line-length",
+        line_length(),
+        "--fix",
+      }
+    },
     diagnostics.markdownlint,
     diagnostics.mypy,
   },
