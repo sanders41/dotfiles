@@ -90,6 +90,7 @@ packer.startup(function()
   use "nvim-treesitter/playground"
   use "NoahTheDuke/vim-just"
   use "IndianBoy42/tree-sitter-just"
+  use "jinh0/eyeliner.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
