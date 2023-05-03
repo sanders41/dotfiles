@@ -113,8 +113,6 @@ alias dotfilesu="git -C $HOME/dotfiles pull origin main --ff-only"
 alias we="weather zip 27455 --country-code usa"
 alias wed="weather zip 27455 -f daily --country-code usa"
 alias weh="weather zip 27455 -p -f hourly --country-code usa"
-alias cdp="cd $HOME/development/python"
-alias cdr="cd $HOME/development/rust"
 alias ls="lsd"
 alias ll="lsd -l"
 alias ds="docker stop \$(docker ps -q)"
@@ -123,6 +121,12 @@ alias dspv="docker system prune -f --all --volumes"
 alias gti="git"  # Because I constantly typo this
 gitbd() {
   git branch -d $1 && git push origin --delete $1
+}
+cdp() {
+  cd "$HOME/development/python/$1"
+}
+cdr() {
+  cd "$HOME/development/rust/$1"
 }
 
 export PYENV_ROOT="$HOME/.pyenv"
