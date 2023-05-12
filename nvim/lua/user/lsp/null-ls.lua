@@ -40,11 +40,8 @@ null_ls.setup {
     formatting.rustfmt,
     formatting.ruff.with {
       extra_args = {
-        "--select",
-        "I001",
-        "--line-length",
-        line_length(),
-        "--fix",
+        "--select=I001",
+        string.format("--line-length=%s", line_length())
       }
     },
     diagnostics.markdownlint,

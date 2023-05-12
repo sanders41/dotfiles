@@ -4,6 +4,16 @@ if not status_ok then
   return
 end
 
+local function line_length()
+  local length = os.getenv("LINELENGTH")
+
+  if length then
+    return length
+  end
+
+  return "100"
+end
+
 local lspconfig = require("lspconfig")
 local servers = { "gopls", "pyright", "lua_ls" }
 local lsp_flags = {
@@ -41,8 +51,10 @@ require('lspconfig').ruff_lsp.setup {
   on_attach = custom_attach,
   init_options = {
     settings = {
-      args = {},
-    }
+      args = {
+        string.format("--line-length=%s", line_length()),
+      },
+    },
   }
 }
 
