@@ -4,8 +4,8 @@ if not status_ok then
   return
 end
 
-lsp_signature.on_attach({
-  bind = true, -- This is mandatory, otherwise border config won"t get registered.
+lsp_signature.setup({
+  bind = true, -- This is mandatory, otherwise border config won't get registered.
   handler_opts = {
     border = "rounded"
   }
