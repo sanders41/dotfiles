@@ -178,3 +178,17 @@ Install the LSP servers
 ```sh
 pipx isntall ruff-lsp
 ```
+
+## McFly
+
+Mac
+
+```sh
+brew install mcfly
+```
+
+Arch
+
+```sh
+sudo pacman -S mcfly
+```
