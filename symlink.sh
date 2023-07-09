@@ -70,3 +70,12 @@ if test -f "$PIP"; then
 fi
 
 ln -s "$HOME/dotfiles/pip/pip.conf" "$PIP"
+
+# Make a backup of the .starship.toml file if it exists then symlink it to dotfiles
+STARSHIP="$HOME/.config/starship.toml"
+
+if test -f "$STARSHIP"; then
+  mv "$STARSHIP" "$STARSHIP.backup"
+fi
+
+ln -s "$HOME/dotfiles/starship/starship.toml" "$STARSHIP"
