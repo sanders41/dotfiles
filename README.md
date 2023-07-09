@@ -132,7 +132,7 @@ git clone --depth=1 https://github.com/MichaelAquilina/zsh-you-should-use.git ${
 - Install poetry
 
   ```sh
-  curl -sSL https://install.python-poetry.org/install-poetry.py | python3 -
+  pipx install poetry
   ```
 
 ## Weather
