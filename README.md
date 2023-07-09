@@ -20,7 +20,7 @@ sh symlink.sh
 
 ### mason
 
-[mson](https://github.com/williamboman/mason.nvim) is included in order to
+[mason](https://github.com/williamboman/mason.nvim) is included in order to
 manager lsp servers. `:Mason` will open a list of both available and installed servers.
 
 ### Telescope
