@@ -30,6 +30,7 @@ null_ls.setup {
       "vue",
       "css",
       "scss",
+      "svelte",
       "less",
       "html",
       "json",
