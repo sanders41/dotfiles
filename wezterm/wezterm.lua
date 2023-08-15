@@ -24,8 +24,8 @@ config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_upper_right_triangle
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
+local SOLID_LEFT_TRIANGLE = wezterm.nerdfonts.ple_upper_right_triangle
+local SOLID_RIGHT_TRIANGLE = wezterm.nerdfonts.ple_upper_left_triangle
 
 local function tab_title(tab_info)
   local title = tab_info.tab_title
@@ -63,13 +63,13 @@ wezterm.on(
     return {
       { Background = { Color = edge_background } },
       { Foreground = { Color = edge_foreground } },
-      { Text = SOLID_LEFT_ARROW },
+      { Text = SOLID_LEFT_TRIANGLE },
       { Background = { Color = background } },
       { Foreground = { Color = foreground } },
       { Text = title },
       { Background = { Color = edge_background } },
       { Foreground = { Color = edge_foreground } },
-      { Text = SOLID_RIGHT_ARROW },
+      { Text = SOLID_RIGHT_TRIANGLE },
     }
   end
 )
