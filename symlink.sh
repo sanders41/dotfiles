@@ -79,3 +79,13 @@ if test -f "$STARSHIP"; then
 fi
 
 ln -s "$HOME/dotfiles/starship/starship.toml" "$STARSHIP"
+
+# Wezterm
+
+WEZTERM=$HOME/.wezterm.lua
+
+if test -f "$WEZTERM"; then
+  mv "$WEZTERM" "$WEZTERM.backup"
+fi
+
+ln -s "$HOME/dotfiles/wezterm/wezterm.lua" "$WEZTERM"
