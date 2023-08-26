@@ -74,6 +74,12 @@ wezterm.on(
   end
 )
 
+-- Check if wayland is being used and if so fall back to xorg because the toolbar doesn't render
+-- correctly under wayland
+if os.getenv("XDG_SESSION_TYPE") == "wayland" then
+  config.enable_wayland = false
+end
+
 -- Key bindings
 config.keys = {
   { key = 'Enter', mods = 'SHIFT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
