@@ -58,7 +58,9 @@ wezterm.on(
 
     -- ensure that the titles fit in the available space,
     -- and that we have room for the edges.
-    title = wezterm.truncate_right(title, max_width - 2)
+    if string.len(title) > (max_width - 2) then
+      title = wezterm.truncate_left(title, max_width - 2)
+    end
 
     return {
       { Background = { Color = edge_background } },
