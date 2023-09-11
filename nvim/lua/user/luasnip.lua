@@ -175,6 +175,8 @@ ls.add_snippets("rust", {
     fmt([[
 #[cfg(test)]
 mod tests {{
+    use super::*;
+
     {}
 }}
     ]],
