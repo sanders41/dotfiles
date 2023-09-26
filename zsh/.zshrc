@@ -107,6 +107,7 @@ alias gcam="git commit -am"
 alias gcb="git checkout -b"
 alias gc="git checkout"
 alias gbd="git branch -d"
+alias gbm="git branch -m"
 alias gph="git push origin HEAD"
 alias pl10ku="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 alias pyenvu="git -C $HOME/.pyenv pull"  # Only works if pyenv installed from github
@@ -120,9 +121,6 @@ alias ds="docker stop \$(docker ps -q)"
 alias dsp="docker system prune -f"
 alias dspv="docker system prune -f --all --volumes"
 alias gti="git"  # Because I constantly typo this
-gitbd() {
-  git branch -d $1 && git push origin --delete $1
-}
 cdp() {
   cd "$HOME/development/python/$1"
 }
