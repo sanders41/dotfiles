@@ -1,9 +1,8 @@
-local cmd = vim.cmd
 local fn = vim.fn
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
+  fn.system({
     "git",
     "clone",
     "--filter=blob:none",
@@ -59,7 +58,7 @@ require("lazy").setup({
   "sumneko/lua-language-server",
   "milisims/nvim-luaref",
   "rhysd/git-messenger.vim",
-  { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' },
+  "sindrets/diffview.nvim",
   "nvim-treesitter/playground",
   "NoahTheDuke/vim-just",
   "IndianBoy42/tree-sitter-just",
