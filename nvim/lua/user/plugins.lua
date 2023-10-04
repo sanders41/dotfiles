@@ -1,100 +1,66 @@
-local cmd = vim.cmd
 local fn = vim.fn
 
--- Automatically install packer if not installed
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-local packer_bootstrap = nil
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system {
+local lazypath = fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  fn.system({
     "git",
     "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  print "Installing packer close and reopen Neovim..."
-  cmd [[packadd packer.nvim]]
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
-
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
-
--- Makes packer display in a floating window
-packer.init {
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end,
-  },
-}
-
-packer.startup(function()
-  use "wbthomason/packer.nvim"
-  use "nvim-lua/popup.nvim"
-  use "nvim-lua/plenary.nvim" -- Used by a lot of plugins
-  use "neovim/nvim-lspconfig"
-  -- use "Mofiqul/vscode.nvim"
-  use "folke/tokyonight.nvim"
-  use "folke/trouble.nvim"
-  use {
+require("lazy").setup({
+  "nvim-lua/popup.nvim",
+  "nvim-lua/plenary.nvim", -- Used by a lot of plugins
+  "neovim/nvim-lspconfig",
+  "folke/tokyonight.nvim",
+  "folke/trouble.nvim",
+  {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate"
-  }
-  use "nvim-tree/nvim-tree.lua"
-  use "lewis6991/gitsigns.nvim"
-  use "hoob3rt/lualine.nvim"
-  use "akinsho/bufferline.nvim"
-  use "kyazdani42/nvim-web-devicons"
-  use "moll/vim-bbye"
-  use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-cmdline"
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
-  use "ray-x/lsp_signature.nvim"
-  use "tpope/vim-fugitive"
-  use "mhartington/formatter.nvim"
-  use "cespare/vim-toml"
-  use "nvim-telescope/telescope.nvim"
-  use {"nvim-telescope/telescope-fzf-native.nvim", run = "make" }
-  use "simrat39/rust-tools.nvim"
-  use "rust-lang/rust.vim"
-  use "akinsho/toggleterm.nvim"
-  use "jose-elias-alvarez/null-ls.nvim"
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
-  use "L3MON4D3/LuaSnip"
-  use "saadparwaiz1/cmp_luasnip"
-  use "kylechui/nvim-surround"
-  use {
+    build = ":TSUpdate"
+  },
+  "nvim-tree/nvim-tree.lua",
+  "lewis6991/gitsigns.nvim",
+  "hoob3rt/lualine.nvim",
+  "akinsho/bufferline.nvim",
+  "kyazdani42/nvim-web-devicons",
+  "moll/vim-bbye",
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-nvim-lua",
+  "ray-x/lsp_signature.nvim",
+  "tpope/vim-fugitive",
+  "mhartington/formatter.nvim",
+  "cespare/vim-toml",
+  "nvim-telescope/telescope.nvim",
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  "simrat39/rust-tools.nvim",
+  "rust-lang/rust.vim",
+  "akinsho/toggleterm.nvim",
+  "jose-elias-alvarez/null-ls.nvim",
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "L3MON4D3/LuaSnip",
+  "saadparwaiz1/cmp_luasnip",
+  "kylechui/nvim-surround",
+  {
     "iamcco/markdown-preview.nvim",
     ft = "markdown",
-    run = "cd app && npm install"
-  }
-  use "sumneko/lua-language-server"
-  use "milisims/nvim-luaref"
-  use "rhysd/git-messenger.vim"
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-  use "nvim-treesitter/playground"
-  use "NoahTheDuke/vim-just"
-  use "IndianBoy42/tree-sitter-just"
-  use "jinh0/eyeliner.nvim"
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require("packer").sync()
-  end
-end)
+    build = "cd app && npm install"
+  },
+  "sumneko/lua-language-server",
+  "milisims/nvim-luaref",
+  "rhysd/git-messenger.vim",
+  "sindrets/diffview.nvim",
+  "nvim-treesitter/playground",
+  "NoahTheDuke/vim-just",
+  "IndianBoy42/tree-sitter-just",
+  "jinh0/eyeliner.nvim",
+})
