@@ -39,12 +39,6 @@ Arch
 sudo pacman -S ripgrep
 ```
 
-### Install packer
-
-```sh
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-
 ### Install luajit
 
 Mac
@@ -94,13 +88,6 @@ Open neovim
 ```sh
 nvim
 ```
-
-Then install plugins with Packer
-
-```sh
-:PackerInstall
-```
-
 
 ## ZSH
 

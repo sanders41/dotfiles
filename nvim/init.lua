@@ -1,9 +1,9 @@
 -- Change leader key to ,
 vim.g.mapleader = ","
 
+require "user.plugins"
 require "user.options"
 require "user.keymaps"
-require "user.plugins"
 require "user.treesitter"
 require "user.toggleterm"
 require "user.bufferline"
