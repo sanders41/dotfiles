@@ -7,7 +7,7 @@ if test -f "$ZSHRC"; then
   mv "$ZSHRC" "$ZSHRC.backup"
 fi
 
-ln -s "$HOME/dotfiles/zsh/.zshrc" "$ZSHRC"
+ln -s "$HOME/dotfiles/zsh/zshrc" "$ZSHRC"
 
 # Make a backup of the neovim config if it exists then symlink it to dotfiles
 NVIM_DIR="$HOME/.config/nvim"
