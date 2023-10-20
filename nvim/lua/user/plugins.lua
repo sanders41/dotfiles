@@ -44,7 +44,7 @@ require("lazy").setup({
   "simrat39/rust-tools.nvim",
   "rust-lang/rust.vim",
   "akinsho/toggleterm.nvim",
-  "jose-elias-alvarez/null-ls.nvim",
+  -- "jose-elias-alvarez/null-ls.nvim",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "L3MON4D3/LuaSnip",
@@ -63,4 +63,6 @@ require("lazy").setup({
   "NoahTheDuke/vim-just",
   "IndianBoy42/tree-sitter-just",
   "jinh0/eyeliner.nvim",
+  "stevearc/conform.nvim",
+  "mfussenegger/nvim-lint",
 })
