@@ -4,7 +4,6 @@ require("conform").setup({
     go = { "gofmt" },
     html = { { "prettierd", "prettier" } },
     javascript = { { "prettierd", "prettier" } },
-    just = { "just" },
     lua = { "stylua" },
     markdown = { { "prettierd", "prettier" } },
     python = { "ruff", "black" },
