@@ -6,7 +6,7 @@ require("conform").setup({
     javascript = { { "prettierd", "prettier" } },
     lua = { "stylua" },
     markdown = { { "prettierd", "prettier" } },
-    python = { "ruff", "black" },
+    python = { "ruff", "ruff-format" },
     rust = { "rustfmt" },
     typescript = { { "prettierd", "prettier" } },
     yaml = { { "prettierd", "prettier" } },
