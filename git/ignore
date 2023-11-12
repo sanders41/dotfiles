@@ -1,0 +1,10 @@
+# OS Files
+*.swp
+*.DS_Store
+
+# Python
+.python-version
+
+# editors
+.idea
+.vscode

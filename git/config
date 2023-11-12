@@ -1,0 +1,9 @@
+[user]
+	name = Paul Sanders
+	email = psanders1@gmail.com
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
+[diff]
+	algorithm = histogram
