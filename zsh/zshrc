@@ -94,6 +94,7 @@ precmd_functions+=(_fix_cursor)
 # Aliases
 
 alias vim="nvim"
+alias v="nvim"
 alias venv="virtualenv .venv && . .venv/bin/activate && pip install -U pip"
 alias activate=". .venv/bin/activate && pip install -U pip"
 alias erd="erd -I --sort name"
