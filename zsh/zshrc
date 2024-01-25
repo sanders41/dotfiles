@@ -110,6 +110,8 @@ alias gc="git checkout"
 alias gbd="git branch -d"
 alias gbm="git branch -m"
 alias gph="git push origin HEAD"
+alias gbn="git --no-pager branch"
+alias gti="git"  # Because I constantly typo this
 alias pl10ku="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 alias pyenvu="git -C $HOME/.pyenv pull"  # Only works if pyenv installed from github
 alias dotfilesu="git -C $HOME/dotfiles pull origin main --ff-only"
@@ -121,7 +123,6 @@ alias ll="lsd -l"
 alias ds="docker stop \$(docker ps -q)"
 alias dsp="docker system prune -f"
 alias dspv="docker system prune -f --all --volumes"
-alias gti="git"  # Because I constantly typo this
 cdp() {
   cd "$HOME/development/python/$1"
 }
