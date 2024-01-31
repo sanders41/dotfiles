@@ -6,13 +6,11 @@ end
 
 local types = require "luasnip.util.types"
 local s = ls.snippet
--- local sn = ls.snippet_node
 local c = ls.choice_node
 local t = ls.text_node
 local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 local f = ls.function_node
--- local d = ls.dyncmic_node
 
 ls.config.set_config {
   history = true,
@@ -28,12 +26,6 @@ ls.config.set_config {
     },
   },
 }
-
--- local same = function(index)
---   return f(function(arg)
---      return arg[1]
---   end, { index })
--- end
 
 -- Python
 
@@ -62,7 +54,7 @@ async def main() -> int:
     return 0
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    raise SystemExit(asyncio.run(main()))
     ]],
     {
       i(0),
