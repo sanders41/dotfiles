@@ -158,6 +158,15 @@ class {}:
       i(1),
       i(2),
     })),
+  s("pmp", fmt([[
+    @pytest.mark.parametrize({})
+  ]],
+  {
+    i(1),
+  })),
+  s("pf", {
+    t({"@pytest.fixture"}),
+  }),
 })
 
 -- Rust
