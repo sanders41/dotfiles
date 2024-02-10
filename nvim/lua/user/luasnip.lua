@@ -171,9 +171,7 @@ class {}:
 
 -- Rust
 ls.add_snippets("rust", {
-  s(
-    "rt",
-    fmt([[
+  s("rt", fmt([[
 #[cfg(test)]
 mod tests {{
     use super::*;
@@ -181,12 +179,16 @@ mod tests {{
     {}
 }}
     ]],
-    {
-      i(1),
-    })),
+  {
+    i(1),
+  })),
+  s("pl", fmt([[
+    println!("{}");
+  ]],
+  {
+    i(1),
+  })),
 })
-
-
 
 -- Expand the current item or jump to the next item within a snippet
 vim.keymap.set({ "i", "s" }, "<c-k>", function()
