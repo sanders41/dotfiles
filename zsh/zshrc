@@ -124,6 +124,7 @@ alias ds="docker stop \$(docker ps -q)"
 alias dsp="docker system prune -f"
 alias dspv="docker system prune -f --all --volumes"
 alias pi="poetry install"
+alias uvp="uv pip"
 cdp() {
   cd "$HOME/development/python/$1"
 }
