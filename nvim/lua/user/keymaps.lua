@@ -4,7 +4,7 @@ local keymap = vim.keymap.set
 -- Telescope key maps
 local builtin = require 'telescope.builtin'
 keymap("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-keymap("n", "<leader>fh", "<cmd>Telescope find_files hidden=true<CR>", opts)
+keymap("n", "<leader>fh", "<cmd>Telescope find_files hidden=true<CR>", { desc = "Find files including hidden files" })
 keymap('n', '<leader>fg', builtin.live_grep, { desc = 'Search by Grep' })
 keymap('n', '<leader>fk', builtin.keymaps, { desc = 'Search Keymaps' })
 keymap('n', '<leader>fw', builtin.grep_string, { desc = 'Search current Word' })
