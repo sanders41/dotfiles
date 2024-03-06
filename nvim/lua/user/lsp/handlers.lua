@@ -60,7 +60,7 @@ end
 local function lsp_keymaps(bufnr)
   -- local opts = { noremap = true, silent = true }
   local function buf_set_keymap(keys, func, desc)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", keys, func, { desc, desc })
+    vim.api.nvim_buf_set_keymap(bufnr, "n", keys, func, { desc = desc })
   end
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
