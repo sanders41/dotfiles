@@ -8,3 +8,9 @@
 # editors
 .idea
 .vscode
+
+# Environments
+.venv
+
+# Secrets
+.env
