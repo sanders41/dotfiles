@@ -44,7 +44,6 @@ require("lazy").setup({
   "simrat39/rust-tools.nvim",
   "rust-lang/rust.vim",
   "akinsho/toggleterm.nvim",
-  -- "jose-elias-alvarez/null-ls.nvim",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "L3MON4D3/LuaSnip",
@@ -65,4 +64,20 @@ require("lazy").setup({
   "jinh0/eyeliner.nvim",
   "stevearc/conform.nvim",
   "mfussenegger/nvim-lint",
+  "mfussenegger/nvim-dap",
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio"
+    },
+  },
 })
