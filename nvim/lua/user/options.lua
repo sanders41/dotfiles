@@ -46,7 +46,19 @@ set.list = true
 set.listchars = {eol = "↲"}
 set.listchars:append({tab = "» ", extends = "»", precedes = "«", trail = "•"})
 
--- vim.g.tokyonight_style = "night"
+require("tokyonight").setup({
+  style = "night",
+  on_colors = function(colors)
+    colors.comment = "#75788c"
+  end,
+  on_highlights = function(hl)
+    -- Set unused code color
+    hl.DiagnosticUnnecessary = { fg = "#75788c" }
+    hl.LineNrAbove = { fg = "#75788c" }
+    hl.LineNrBelow = { fg = "#75788c" }
+  end,
+})
+
 cmd("colorscheme tokyonight-night")
 
 cmd [[autocmd TermOpen * setlocal nonumber norelativenumber]]
