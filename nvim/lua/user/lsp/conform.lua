@@ -56,15 +56,15 @@ local function get_python_formatter()
 end
 
 local formatters = {
-  css = { { "prettierd", "prettier" } },
-  go = { "gofmt" },
-  html = { { "prettierd", "prettier" } },
-  javascript = { { "prettierd", "prettier" } },
+  css = { "prettierd", "prettier", stop_after_first = true  },
+  go = { "goimports", "gofmt", stop_after_first = true },
+  html = { "prettierd", "prettier", stop_after_first = true },
+  javascript = { "prettierd", "prettier", stop_after_first = true },
   lua = { "stylua" },
-  markdown = { { "prettierd", "prettier" } },
+  markdown = { "prettierd", "prettier", stop_after_first = true },
   rust = { "rustfmt" },
-  typescript = { { "prettierd", "prettier" } },
-  yaml = { { "prettierd", "prettier" } },
+  typescript = { "prettierd", "prettier", stop_after_first = true },
+  yaml = { "prettierd", "prettier", stop_after_first = true },
 }
 
 local python_formatter = get_python_formatter()
@@ -77,6 +77,6 @@ require("conform").setup({
   formatters_by_ft = formatters,
   format_on_save = {
     timeout_ms = 500,
-    lsp_fallback = true,
+    lsp_format = "fallback"
   },
 })
