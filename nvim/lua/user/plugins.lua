@@ -66,6 +66,12 @@ require("lazy").setup({
   "mfussenegger/nvim-lint",
   "mfussenegger/nvim-dap",
   {
+    "MeanderingProgrammer/markdown.nvim",
+    main = "render-markdown",
+    opts = {},
+    dependencies = {"nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+  },
+  {
     "mfussenegger/nvim-dap-python",
     ft = "python",
     dependencies = {
