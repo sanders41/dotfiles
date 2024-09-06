@@ -8,6 +8,8 @@ printf "\n${BLUE}Updating dot files${RESET}\n"
 git -C $HOME/dotfiles pull origin main --ff-only
 printf "\n${BLUE}Updating NPM packages${RESET}\n"
 npm -g update
+printf "\n${BLUE}Updating uv${RESET}\n"
+uv self update
 printf "\n${BLUE}Updating pipx packages${RESET}\n"
 pipx upgrade-all
 printf "\n${BLUE}Updating rust${RESET}\n"
