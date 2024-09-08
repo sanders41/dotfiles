@@ -10,8 +10,8 @@ printf "\n${BLUE}Updating NPM packages${RESET}\n"
 npm -g update
 printf "\n${BLUE}Updating uv${RESET}\n"
 uv self update
-printf "\n${BLUE}Updating pipx packages${RESET}\n"
-pipx upgrade-all
+printf "\n${BLUE}Updating uv tool packages${RESET}\n"
+uv tool upgrade --all
 printf "\n${BLUE}Updating rust${RESET}\n"
 rustup update
 printf "\n${BLUE}Updating cargo packages${RESET}\n"
