@@ -127,6 +127,7 @@ alias dspv="docker system prune -f --all --volumes"
 alias pi="poetry install"
 alias uvp="uv pip"
 alias uvu="uv self update"
+alias uvr="uv run"
 alias ud="~/dotfiles/run_updates.sh"
 cdp() {
   cd "$HOME/development/python/$1"
