@@ -44,13 +44,13 @@ fi
 ln -s "$HOME/dotfiles/kitty/current-theme.conf" "$KITTY_THEME"
 
 # Link alacritty config
-ALACRITTY="$HOME/.config/alacritty/alacritty.yml"
+ALACRITTY="$HOME/.config/alacritty/alacritty.toml"
 
 if test -f "$ALACRITTY"; then
   mv "$ALACRITTY" "$ALACRITTY.backup"
 fi
 
-ln -s "$HOME/dotfiles/alacritty/alacritty.yml" "$ALACRITTY"
+ln -s "$HOME/dotfiles/alacritty/alacritty.toml" "$ALACRITTY"
 
 # Link zellij config
 ZELLIJ="$HOME/zellij/config.kdl"
