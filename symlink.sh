@@ -53,7 +53,7 @@ fi
 ln -s "$HOME/dotfiles/alacritty/alacritty.toml" "$ALACRITTY"
 
 # Link zellij config
-ZELLIJ="$HOME/zellij/config.kdl"
+ZELLIJ="$HOME/.config/zellij/config.kdl"
 
 if test -f "$ZELLIJ"; then
   mv "$ZELLIJ" "$ZELLIJ.backup"
