@@ -47,7 +47,7 @@ for _, server in pairs(servers) do
   lspconfig[server].setup(opts)
 end
 
-require('lspconfig').ruff_lsp.setup {
+require('lspconfig').ruff.setup {
   on_attach = custom_attach,
   init_options = {
     settings = {
