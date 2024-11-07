@@ -94,7 +94,6 @@ precmd_functions+=(_fix_cursor)
 # Aliases
 
 alias vim="nvim"
-alias v="nvim"
 alias venv="uv venv &> /dev/null && . .venv/bin/activate"
 alias activate=". .venv/bin/activate"
 alias erd="erd -I --sort name"
@@ -127,6 +126,15 @@ alias uvp="uv pip"
 alias uvu="uv self update"
 alias uvr="uv run"
 alias ud="~/dotfiles/run_updates.sh"
+v() {
+  # If there is a .venv directory in the directory activate the virtual environment then open
+  # neovim, other wise just open neovim
+  if [ -d ".venv" ]; then
+    activate && nvim
+  else;
+    nvim
+  fi
+}
 cdp() {
   cd "$HOME/development/python/$1"
 }
