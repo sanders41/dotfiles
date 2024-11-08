@@ -127,9 +127,9 @@ alias uvu="uv self update"
 alias uvr="uv run"
 alias ud="~/dotfiles/run_updates.sh"
 v() {
-  # If there is a .venv directory in the directory activate the virtual environment then open
-  # neovim, other wise just open neovim
-  if [ -d ".venv" ]; then
+  # If there is a .venv directory in the directory and no virtual environment is already active
+  # activate the virtual environment then open neovim, other wise just open neovim
+  if [ -d ".venv" ] && [ -z "${VIRTUAL_ENV}" ]; then
     activate && nvim
   else;
     nvim
