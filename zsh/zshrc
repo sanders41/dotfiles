@@ -130,9 +130,9 @@ v() {
   # If there is a .venv directory in the directory and no virtual environment is already active
   # activate the virtual environment then open neovim, other wise just open neovim
   if [ -d ".venv" ] && [ -z "${VIRTUAL_ENV}" ]; then
-    activate && nvim
+    activate && nvim $1
   else;
-    nvim
+    nvim $1
   fi
 }
 cdp() {
