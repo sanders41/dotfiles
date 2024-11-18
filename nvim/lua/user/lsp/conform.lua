@@ -33,6 +33,8 @@ local function get_python_formatter()
     local packages = {}
     if isort then
       table.insert(packages, "isort")
+    else
+      table.insert(packages, "ruff_organize_imports")
     end
 
     if ruff then
