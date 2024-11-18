@@ -1,6 +1,6 @@
 local function get_python_formatter()
   -- 2>&1 to also capture stderr
-  local status_ok, python_packages = pcall(io.popen, "pip freeze 2>&1")
+  local status_ok, python_packages = pcall(io.popen, "uv pip freeze 2>&1")
   if not status_ok then
     if python_packages ~= nil then
       python_packages:close()
