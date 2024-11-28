@@ -26,7 +26,7 @@ require("lazy").setup({
   "nvim-tree/nvim-tree.lua",
   "lewis6991/gitsigns.nvim",
   "hoob3rt/lualine.nvim",
-  "akinsho/bufferline.nvim",
+  {'akinsho/bufferline.nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
   "kyazdani42/nvim-web-devicons",
   "moll/vim-bbye",
   "hrsh7th/nvim-cmp",
