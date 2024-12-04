@@ -152,6 +152,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
+# Build python versions with optimizations
+export CONFIGURE_OPTS="--enable-optimizations --with-lto"
+export PYTHON_CFLAGS="-march=native -mtune=native"
+
 export PATH="$HOME/.npm-global/bin:$PATH"
 export COOKIECUTTER_CONFIG="$HOME/.cookiecutters/defaults.yaml"
 export PATH="$PATH:/home/paul/.local/bin"
