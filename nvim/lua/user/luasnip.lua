@@ -167,6 +167,18 @@ class {}:
   s("pf", {
     t({"@pytest.fixture"}),
   }),
+  s("p", fmt([[
+print("{}")
+    ]],
+    {
+      i(1),
+    })),
+  s("fp", fmt([[
+print(f"{}")
+    ]],
+    {
+      i(1),
+    })),
 })
 
 -- Rust
