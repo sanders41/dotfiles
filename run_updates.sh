@@ -6,6 +6,8 @@ BLUE='\033[34m'
 "$ZSH/tools/upgrade.sh"
 printf "\n${BLUE}Updating dot files${RESET}\n"
 git -C $HOME/dotfiles pull origin main --ff-only
+printf "\n${BLUE}Running paru${RESET}\n"
+paru
 printf "\n${BLUE}Updating NPM packages${RESET}\n"
 npm -g update
 printf "\n${BLUE}Updating uv${RESET}\n"
