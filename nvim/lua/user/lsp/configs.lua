@@ -15,7 +15,7 @@ local function line_length()
 end
 
 local lspconfig = require("lspconfig")
-local servers = { "gopls", "pyright", "lua_ls" }
+local servers = { "gopls", "pyright", "lua_ls", "ts_ls" }
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
