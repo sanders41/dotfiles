@@ -11,3 +11,5 @@
   current = green reverse
   local = green
   remote = red
+[help]
+	autoCorrect = prompt
