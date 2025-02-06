@@ -9,5 +9,5 @@
 	algorithm = histogram
 [color "branch"]
   current = green reverse
-  local = blue
+  local = green
   remote = red
