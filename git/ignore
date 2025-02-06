@@ -3,14 +3,19 @@
 *.DS_Store
 
 # Python
+__pycache__/
+*.py[cod]
+*$py.class
 .python-version
+.venv
+.tox/
+.nox/
 
 # editors
 .idea
 .vscode
 
 # Environments
-.venv
 
 # Secrets
 .env
