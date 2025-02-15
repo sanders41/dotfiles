@@ -64,26 +64,4 @@ require("lazy").setup({
   "jinh0/eyeliner.nvim",
   "stevearc/conform.nvim",
   "mfussenegger/nvim-lint",
-  "mfussenegger/nvim-dap",
-  -- {
-  --   "MeanderingProgrammer/markdown.nvim",
-  --   main = "render-markdown",
-  --   opts = {},
-  --   dependencies = {"nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-  -- },
-  {
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-    },
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio"
-    },
-  },
 })
