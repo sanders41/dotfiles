@@ -54,6 +54,15 @@ require("lazy").setup({
     ft = "markdown",
     build = "cd app && npm install"
   },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && npm install && git restore .",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
   "sumneko/lua-language-server",
   "milisims/nvim-luaref",
   "rhysd/git-messenger.vim",
