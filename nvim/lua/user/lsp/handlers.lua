@@ -79,16 +79,14 @@ local function lsp_keymaps(bufnr)
   buf_set_keymap("<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action")
   buf_set_keymap("gr", "<cmd>lua vim.lsp.buf.references()<CR>", "Go to reference")
   buf_set_keymap("<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", "Show diagnostics")
-  buf_set_keymap("[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", "Go to previous diagnostic")
-  buf_set_keymap("]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Go to next diagnostic")
-  vim.cmd [[ command! Format execute "lua vim.lsp.buf.formatting()" ]]
+  buf_set_keymap("[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Go to previous diagnostic")
+  buf_set_keymap("]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", "Go to next diagnostic")
+  vim.cmd [[ command! Format execute "lua vim.lsp.buf.format()" ]]
 end
 
 M.on_attach = function(client, bufnr)
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
   -- Enable completion triggered by <c-x><c-o>
-  buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+  vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
   if client.name == "tsserver" or client.name == "rust_analyzer" then
     client.server_capabilities.documentFormatting = false
   end
