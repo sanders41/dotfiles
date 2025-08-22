@@ -51,11 +51,6 @@ require("lazy").setup({
   "kylechui/nvim-surround",
   {
     "iamcco/markdown-preview.nvim",
-    ft = "markdown",
-    build = "cd app && npm install"
-  },
-  {
-    "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     build = "cd app && npm install && git restore .",
     init = function()
