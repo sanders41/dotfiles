@@ -179,6 +179,28 @@ print(f"{}")
     {
       i(1),
     })),
+
+  -- Convert {variable}?? to if {variable} is None:
+  s({
+    trig = "([%w_.]+)%?%?",
+    regTrig = true,
+  }, fmt([[
+if {} is None:
+    {}]], {
+    f(function(_, snip) return snip.captures[1] end),
+    i(0),
+  })),
+
+  -- Convert {variable}? to if not {variable}:
+  s({
+    trig = "([%w_.]+)%?",
+    regTrig = true,
+  }, fmt([[
+if not {}:
+    {}]], {
+    f(function(_, snip) return snip.captures[1] end),
+    i(0),
+  })),
 })
 
 -- Rust
