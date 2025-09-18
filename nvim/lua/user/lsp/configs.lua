@@ -14,21 +14,11 @@ local function line_length()
   return "100"
 end
 
-local servers = { "gopls", "pyright", "lua_ls", "ts_ls" }
+local servers = { "pyright", "ts_ls" }
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
-
-mason.setup({
-  ui = {
-    icons = {
-      package_installed = "✓",
-      package_pending = "➜",
-      package_uninstalled = "✗"
-    }
-  }
-})
 
 local capabilities = require("user.lsp.handlers").capabilities
 local custom_attach = require("user.lsp.handlers").on_attach
@@ -47,6 +37,23 @@ for _, server in pairs(servers) do
   vim.lsp.enable(server)
 end
 
+vim.lsp.config("lua_ls", {
+  on_attach = custom_attach,
+  settings = {
+    Lua = {
+      runtime = {
+        version = "LuaJIT",
+      },
+      diagnostics = {
+        globals = {
+          "vim",
+          "require",
+        },
+      },
+    },
+  },
+})
+
 vim.lsp.config("ruff", {
   on_attach = custom_attach,
   init_options = {
@@ -63,7 +70,6 @@ local rt = require("rust-tools")
 
 rt.setup({
   server = {
-    -- on_attach = function(_, bufnr)
     on_attach = custom_attach,
     capabilities = capabilities,
     flags = lsp_flags
@@ -73,4 +79,14 @@ rt.setup({
       auto = false,
     },
   },
+})
+
+mason.setup({
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
+    }
+  }
 })
