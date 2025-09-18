@@ -14,7 +14,6 @@ local function line_length()
   return "100"
 end
 
-local lspconfig = require("lspconfig")
 local servers = { "gopls", "pyright", "lua_ls", "ts_ls" }
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
@@ -44,10 +43,11 @@ for _, server in pairs(servers) do
   if has_custom_opts then
     opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
   end
-  lspconfig[server].setup(opts)
+  vim.lsp.config(server, opts)
+  vim.lsp.enable(server)
 end
 
-require('lspconfig').ruff.setup {
+vim.lsp.config("ruff", {
   on_attach = custom_attach,
   init_options = {
     settings = {
@@ -56,7 +56,8 @@ require('lspconfig').ruff.setup {
       },
     },
   }
-}
+})
+vim.lsp.enable("ruff")
 
 local rt = require("rust-tools")
 
