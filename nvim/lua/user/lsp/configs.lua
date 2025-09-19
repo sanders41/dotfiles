@@ -72,7 +72,14 @@ rt.setup({
   server = {
     on_attach = custom_attach,
     capabilities = capabilities,
-    flags = lsp_flags
+    flags = lsp_flags,
+    settings = {
+      ["rust-analyzer"] = {
+        cargo = {
+          allFeatures = true,
+        },
+      },
+    },
   },
   tools = {
     inlay_hints = {
