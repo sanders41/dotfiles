@@ -27,15 +27,22 @@ keymap("n", "<C-Right>", ":vertical resize -2<CR>", { desc = "Resize window righ
 -- NvimTree
 keymap("n", "<leader>t", ":NvimTreeToggle<CR>", { desc = "Toggle nvim tree" })
 
--- Navigate buffers
+-- Navigate bufferline buffers
 keymap("n", "<S-l>", ":bnext<CR>", { desc = "Move to tab on the right" })
 keymap("n", "<S-h>", ":bprevious<CR>", { desc = "Move to the tab on the left" })
 
--- Close buffers
+-- Close bufferline buffers
 keymap("n", "<leader>q", ":Bdelete<CR>", { desc = "Close the current buffer" })  -- bbye close single buffer
 keymap("n", "<leader><S-q>", ":%bd<CR>", { desc = "Close all buffers" })  -- close all buffers
 
+-- Move buffers buffers
+keymap("n", "<leader>>", ":BufferLineMoveNext<CR>", { desc = "Move the current tab to right one position" })
+keymap("n", "<leader><", ":BufferLineMovePrev<CR>", { desc = "Move the current tab to left one position" })
+
 -- Git
 keymap("n", "<leader>gb", ":Git blame<CR>", { desc = "Show git blame" })
+
+-- ToggleTerm
+keymap("n", "<C-\\>", ":ToggleTerm<CR>", { desc = "Toggle terminal buffer" })
 
 keymap ("n", "<leader><leader>w", ":w | source %<CR>", { desc = "Save and reload file" })
