@@ -41,7 +41,10 @@ require("lazy").setup({
   "cespare/vim-toml",
   "nvim-telescope/telescope.nvim",
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-  "simrat39/rust-tools.nvim",
+  {
+    'mrcjkb/rustaceanvim',
+    lazy = false,
+  },
   "rust-lang/rust.vim",
   "akinsho/toggleterm.nvim",
   "mason-org/mason.nvim",
