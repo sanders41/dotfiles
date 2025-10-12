@@ -1,6 +1,7 @@
 -- Change leader key to ,
 vim.g.mapleader = ","
 
+require "user.rustaceanvim" -- This needs to be first because of the way the plugin works
 require "user.plugins"
 require "user.options"
 require "user.keymaps"

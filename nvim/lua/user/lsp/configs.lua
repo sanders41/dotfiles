@@ -66,30 +66,6 @@ vim.lsp.config("ruff", {
 })
 vim.lsp.enable("ruff")
 
-vim.g.rustaceanvim = {
-  server = {
-    on_attach = function(_, bufnr)
-      vim.keymap.set(
-        "n",
-        "<leader>a",
-        function()
-          vim.cmd.RustLsp('codeAction') -- supports rust-analyzer's grouping
-          -- or vim.lsp.buf.codeAction() if you don't want grouping.
-        end,
-        { silent = true, buffer = bufnr }
-      )
-      vim.keymap.set(
-        "n",
-        "K",  -- Override Neovim's built-in hover keymap with rustaceanvim's hover actions
-        function()
-          vim.cmd.RustLsp({'hover', 'actions'})
-        end,
-        { silent = true, buffer = bufnr }
-      )     -- you can also put keymaps in here
-    end,
-  },
-}
-
 mason.setup({
   ui = {
     icons = {
