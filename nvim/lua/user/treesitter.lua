@@ -7,7 +7,7 @@ end
 configs.setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "phpdoc", "tree-sitter-phpdoc" }, -- Parsers to ignore. M1 Macs currently have an issue with phpdoc
+  ignore_install = { "phpdoc", "tree-sitter-phpdoc", "ipkg" }, -- Parsers to ignore
   autopairs = {
     enable = false,
   },
