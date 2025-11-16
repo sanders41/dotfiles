@@ -14,7 +14,7 @@ local function line_length()
   return "100"
 end
 
-local servers = { "pyright", "ts_ls" }
+local servers = { "pyright" }
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
@@ -36,6 +36,27 @@ for _, server in pairs(servers) do
   vim.lsp.config(server, opts)
   vim.lsp.enable(server)
 end
+
+-- Explicit ts_ls configuration with corrected root_dir to fix nvim-lspconfig bug
+vim.lsp.config("ts_ls", {
+  on_attach = custom_attach,
+  capabilities = capabilities,
+  flags = lsp_flags,
+  root_dir = function(bufnr, on_dir)
+    local root_markers = { 'package-lock.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb', 'bun.lock' }
+    root_markers = vim.fn.has('nvim-0.11.3') == 1 and { root_markers, { '.git' } }
+      or vim.list_extend(root_markers, { '.git' })
+    local deno_path = vim.fs.root(bufnr, { 'deno.json', 'deno.lock' })
+    -- FIX: Remove extra braces to prevent triple-nesting bug
+    local project_root = vim.fs.root(bufnr, root_markers)
+    -- Exclude deno projects
+    if deno_path and (not project_root or #deno_path >= #project_root) then
+      return
+    end
+    on_dir(project_root or vim.fn.getcwd())
+  end,
+})
+vim.lsp.enable("ts_ls")
 
 vim.lsp.config("lua_ls", {
   on_attach = custom_attach,
