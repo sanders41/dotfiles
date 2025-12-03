@@ -19,6 +19,3 @@ __pycache__/
 
 # Secrets
 .env
-
-# AI Helpers
-.claude
