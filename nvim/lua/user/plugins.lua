@@ -61,7 +61,7 @@ require("lazy").setup({
     end,
     ft = { "markdown" },
   },
-  "sumneko/lua-language-server",
+  -- "sumneko/lua-language-server",
   "milisims/nvim-luaref",
   "rhysd/git-messenger.vim",
   "sindrets/diffview.nvim",
