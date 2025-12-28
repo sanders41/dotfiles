@@ -14,8 +14,8 @@ printf "\n${BLUE}Updating uv${RESET}\n"
 uv self update
 
 printf "\n${BLUE}Check for Python updates${RESET}\n"
-current_version = $(uv run python -V 2>&1 | rg -o '\d+\.\d+\.\d+')
-new_version = $(uv python install 3.14 --reinstall 2>&1 | rg -o '\d+\.\d+\.\d+' | head -n1)
+current_version=$(uv run python -V 2>&1 | rg -o '\d+\.\d+\.\d+')
+new_version=$(uv python install 3.14 --reinstall 2>&1 | rg -o '\d+\.\d+\.\d+' | head -n1)
 if [[ "$current_version" == "$new_version" ]] ; then
   printf "\n${BLUE}No new Python version, updating uv tool packages${RESET}\n"
   uv tool upgrade --all
