@@ -119,7 +119,7 @@ alias gph="git push origin HEAD"
 alias gbn="git --no-pager branch"
 alias gti="git"  # Because I constantly typo this
 alias pl10ku="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
-alias pyenvu="git -C $HOME/.pyenv pull"  # Only works if pyenv installed from github
+# alias pyenvu="git -C $HOME/.pyenv pull"  # Only works if pyenv installed from github
 alias dotfilesu="git -C $HOME/dotfiles pull origin main --ff-only"
 alias ls="lsd"
 alias ll="lsd -l"
@@ -130,6 +130,7 @@ alias pi="poetry install"
 alias uvp="uv pip"
 alias uvu="uv self update"
 alias uvr="uv run"
+alias uvv="uv venv -p 3.14"
 alias ud="~/dotfiles/run_updates.sh"
 v() {
   # If there is a .venv directory in the directory and no virtual environment is already active
@@ -150,9 +151,9 @@ cdw() {
   cd "$HOME/development/web/$1"
 }
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init --path)"
 
 # Build python versions with optimizations
 export CONFIGURE_OPTS="--enable-optimizations --with-lto"
