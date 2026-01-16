@@ -65,7 +65,6 @@ require("lazy").setup({
   "milisims/nvim-luaref",
   "rhysd/git-messenger.vim",
   "sindrets/diffview.nvim",
-  "nvim-treesitter/playground",
   "NoahTheDuke/vim-just",
   "IndianBoy42/tree-sitter-just",
   "jinh0/eyeliner.nvim",
