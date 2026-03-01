@@ -17,10 +17,10 @@ printf "\n${BLUE}Check for Python updates${RESET}\n"
 current_version=$(uv run python -V 2>&1 | rg -o '\d+\.\d+\.\d+')
 new_version=$(uv python install 3.14 --reinstall 2>&1 | rg -o '\d+\.\d+\.\d+' | head -n1)
 if [[ "$current_version" == "$new_version" ]] ; then
-  printf "\n${BLUE}No new Python version. old version = ${current_version}, new version = ${new_version}. "pdating uv tool packages${RESET}\n"
+  printf "\n${BLUE}No new Python version, updating uv tool packages${RESET}\n"
   uv tool upgrade --all
 else
-  printf "\n${BLUE}New Python version, reinstalling uv tool packages${RESET}\n"
+  printf "\n${BLUE}New Python version. Old version = ${current_version}, new version = ${new_version}. Reinstalling uv tool packages${RESET}\n"
   uv tool upgrade --all --reinstall
 fi
 
