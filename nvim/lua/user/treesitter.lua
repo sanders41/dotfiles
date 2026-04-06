@@ -1,26 +1,25 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+local status_ok, treesitter = pcall(require, "nvim-treesitter")
 if not status_ok then
-  print("error loading treesitter")
+  print("error loading nvim-treesitter")
   return
 end
 
-configs.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "phpdoc", "tree-sitter-phpdoc", "ipkg" }, -- Parsers to ignore
-  autopairs = {
-    enable = false,
-  },
-  highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
-  },
-  indent = { enable = true, disable = { "python",  "yaml" } },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
-}
+treesitter.setup()
 
-require("tree-sitter-just").setup({})
+treesitter.install("all")
+
+-- Enable treesitter highlighting for all filetypes
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function()
+    pcall(vim.treesitter.start)
+  end,
+})
+
+-- Enable treesitter indentation (experimental) for all filetypes except python and yaml
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(ev)
+    if not vim.tbl_contains({ "python", "yaml" }, ev.match) then
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
+  end,
+})

@@ -21,6 +21,7 @@ require("lazy").setup({
   "folke/trouble.nvim",
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = ":TSUpdate"
   },
   "nvim-tree/nvim-tree.lua",
@@ -66,7 +67,7 @@ require("lazy").setup({
   "rhysd/git-messenger.vim",
   "sindrets/diffview.nvim",
   "NoahTheDuke/vim-just",
-  "IndianBoy42/tree-sitter-just",
+  -- "IndianBoy42/tree-sitter-just",
   "jinh0/eyeliner.nvim",
   "stevearc/conform.nvim",
   "mfussenegger/nvim-lint",
