@@ -1,0 +1,13 @@
+[update]
+exclude_tags = ["*-{alpha,beta,dev,rc}*", "*.{alpha,beta,dev,rc}*"]
+
+[[repos]]
+repo = "builtin"
+hooks = [
+  { id = "check-added-large-files" },
+  { id = "check-toml" },
+  { id = "check-yaml" },
+  { id = "end-of-file-fixer" },
+  { id = "no-commit-to-branch" },
+  { id = "trailing-whitespace" },
+]

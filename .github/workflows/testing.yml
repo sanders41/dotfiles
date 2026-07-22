@@ -1,0 +1,15 @@
+name: Testing
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+env:
+  PYTHON_VERSION: "3.10"
+jobs:
+  prek:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: j178/prek-action@v2
