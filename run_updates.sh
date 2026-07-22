@@ -27,6 +27,6 @@ fi
 printf "\n${BLUE}Updating rust${RESET}\n"
 rustup update
 printf "\n${BLUE}Updating cargo packages${RESET}\n"
-cargo install-update -a
+cargo install-update -a --locked
 # printf "\n${BLUE}Updating pyenv${RESET}\n"
 # git -C $HOME/.pyenv pull
