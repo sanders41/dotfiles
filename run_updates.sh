@@ -25,6 +25,9 @@ else
   uv tool upgrade --all --reinstall
 fi
 
+printf "\n${BLUE}Updating pnpm${RESET}\n"
+pnpm self-update
+
 printf "\n${BLUE}Updating rust${RESET}\n"
 rustup update
 printf "\n${BLUE}Updating cargo packages${RESET}\n"
